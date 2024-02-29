@@ -6,12 +6,11 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class TestDoublyLinkedListSentinels {
+class TestDoublyLinkedListSentinel {
 
-    private DoublyLinkedListSentinels getList() {
-        DoublyLinkedListSentinels list = new DoublyLinkedListSentinels();
+    private DoublyLinkedListSentinel getList() {
+        DoublyLinkedListSentinel list = new DoublyLinkedListSentinel();
         list.addLast(1);
         list.addLast(2);
         list.addLast(3);
@@ -22,7 +21,7 @@ class TestDoublyLinkedListSentinels {
     @Test
     @DisplayName("测试 get")
     public void test3() {
-        DoublyLinkedListSentinels list = getList();
+        DoublyLinkedListSentinel list = getList();
         assertEquals(1, list.get(0));
         assertEquals(3, list.get(2));
         assertEquals(4, list.get(3));
@@ -33,7 +32,7 @@ class TestDoublyLinkedListSentinels {
     @Test
     @DisplayName("测试 addFirst")
     void addFirst() {
-        DoublyLinkedListSentinels list = new DoublyLinkedListSentinels();
+        DoublyLinkedListSentinel list = new DoublyLinkedListSentinel();
         list.addFirst(1);
         list.addFirst(2);
         list.addFirst(3);
@@ -46,7 +45,7 @@ class TestDoublyLinkedListSentinels {
     @Test
     @DisplayName("测试 addLast")
     public void test2() {
-        DoublyLinkedListSentinels list = getList();
+        DoublyLinkedListSentinel list = getList();
         list.forEach(System.out::println);
         assertIterableEquals(List.of(1, 2, 3, 4), list);
     }
@@ -55,7 +54,7 @@ class TestDoublyLinkedListSentinels {
     @Test
     @DisplayName("测试 insert")
     void insert() {
-        DoublyLinkedListSentinels list = getList();
+        DoublyLinkedListSentinel list = getList();
         list.insert(0, 5);
         assertIterableEquals(List.of(5, 1, 2, 3, 4), list);
 
@@ -72,7 +71,7 @@ class TestDoublyLinkedListSentinels {
     @Test
     @DisplayName("测试 removeFirst")
     void removeFirst() {
-        DoublyLinkedListSentinels list = getList();
+        DoublyLinkedListSentinel list = getList();
 
         list.removeFirst();
         assertIterableEquals(List.of(2, 3, 4), list);
@@ -89,7 +88,7 @@ class TestDoublyLinkedListSentinels {
     @Test
     @DisplayName("测试 removeLast")
     void removeLast() {
-        DoublyLinkedListSentinels list = getList();
+        DoublyLinkedListSentinel list = getList();
         list.removeLast();
         assertIterableEquals(List.of(1, 2, 3), list);
         list.removeLast();
@@ -103,11 +102,11 @@ class TestDoublyLinkedListSentinels {
 
     @Test
     void remove() {
-        DoublyLinkedListSentinels list = getList();
+        DoublyLinkedListSentinel list = getList();
         list.remove(2);
         assertIterableEquals(List.of(1, 2, 4), list);
 
-        DoublyLinkedListSentinels list2 = getList();
+        DoublyLinkedListSentinel list2 = getList();
         list2.remove(0);
         assertIterableEquals(List.of(2, 3, 4), list2);
 
@@ -117,7 +116,7 @@ class TestDoublyLinkedListSentinels {
 
         assertThrows(IllegalArgumentException.class, () -> list.remove(10));
 
-        assertThrows(IllegalArgumentException.class, () -> new DoublyLinkedListSentinels().remove(0));
+        assertThrows(IllegalArgumentException.class, () -> new DoublyLinkedListSentinel().remove(0));
     }
 
 }

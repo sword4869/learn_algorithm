@@ -1,81 +1,13 @@
-可以分类为
-
-* 单向链表，每个元素只知道其下一个元素是谁
-
-
-* 双向链表，每个元素知道其上一个元素和下一个元素
-
-
-* 循环链表，通常的链表尾节点 tail 指向的都是 null，而循环链表的 tail 指向的是头节点 head
-
-链表内还有一种特殊的节点称为哨兵（Sentinel）节点，也叫做哑元（ Dummy）节点，它不存储数据，通常用作头尾，用来简化边界判断，如下图所示
-
-> 性能
-
-**随机访问性能**
-
-根据 index 查找，时间复杂度 $O(n)$
-
-**插入或删除性能**：花在查找节点上
-
-* 起始位置：$O(1)$
-* 结束位置：如果已知 tail 尾节点是 $O(1)$，不知道 tail 尾节点是 $O(n)$
-* 中间位置：$O(n)$
-
-## 节点
-
-```java
-/**
- * Leetcode 很多链表题目用到的节点类
- */
-public class ListNode {
-    public int val;
-    public ListNode next;
-
-    public ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder(64);
-        sb.append("[");
-        ListNode p = this;
-        while (p != null) {
-            sb.append(p.val);
-            if (p.next != null) {
-                sb.append(",");
-            }
-            p = p.next;
-        }
-        sb.append("]");
-        return sb.toString();
-        // return String.valueOf(this.val);
-    }
-
-    public static ListNode of(int... elements) {
-        if (elements.length == 0) {
-            return null;
-        }
-        ListNode p = null;
-        for (int i = elements.length - 1; i >= 0; i--) {
-            p = new ListNode(elements[i], p);
-        }
-        return p;
-    }
-}
-```
-## 单链表
-
-```java
-package com.example;
+package com.itheima.datastructure.linkedlist;
 
 import java.util.Iterator;
 import java.util.function.Consumer;
 
+/**
+ * 单向链表
+ */
 public class SinglyLinkedList implements Iterable<Integer> {
-    private Node head = null; // 头指针
+    private Node head; // 头指针
 
     /**
      * 节点类
@@ -97,8 +29,8 @@ public class SinglyLinkedList implements Iterable<Integer> {
             return null;
         }
 
-        Node p;
         // 最后一个元素，其 next 为 null
+        Node p = null;
         for (p = head; p.next != null; p = p.next) {
 
         }
@@ -106,6 +38,7 @@ public class SinglyLinkedList implements Iterable<Integer> {
     }
 
     private Node findNode(int index) {
+        // 没找到返回null
         int i = 0;
         for(Node p = head; p != null; p = p.next, i++){
             if(i == index){
@@ -115,6 +48,13 @@ public class SinglyLinkedList implements Iterable<Integer> {
         return null;
     }
 
+    /**
+     * 根据索引查找
+     *
+     * @param index 索引
+     * @return 找到, 返回该索引位置节点的值
+     * @throws IllegalArgumentException 找不到, 抛出 index 非法异常
+     */
     public int get(int index) {
         Node node = findNode(index);
         if (node == null) {
@@ -132,26 +72,27 @@ public class SinglyLinkedList implements Iterable<Integer> {
     }
 
     public void addLast(int value) {
-        // 空链表处理，因为要判断 next 属性
-        if (head == null) {
+        Node last = findLast();
+        // 空链表
+        if(last == null){
             head = new Node(value, null);
             return;
         }
-        Node last = findLast();
         last.next = new Node(value, null);
     }
 
     public void insert(int index, int value) throws IllegalArgumentException {
         // 因为要特别处理上一个节点的index为-1的情况
         if (index == 0) {
-            head = new Node(value, null);
+            head = new Node(value, head);
             return;
         }
         Node prev = findNode(index - 1); // 找到上一个节点
         if (prev == null) { // 找不到
             throw new IllegalArgumentException();
         }
-        prev.next = new Node(value, prev.next);
+        Node added = new Node(value, prev.next);
+        prev.next = added;
     }
 
     /************************ 删除 ************************/
@@ -183,7 +124,7 @@ public class SinglyLinkedList implements Iterable<Integer> {
     }
 
     /************************ 遍历 ************************/
-    public void loop1(Consumer<Integer> consumer) {
+    public void loop_while(Consumer<Integer> consumer) {
         Node p = head;
         while (p != null) {
             consumer.accept(p.value);
@@ -191,14 +132,24 @@ public class SinglyLinkedList implements Iterable<Integer> {
         }
     }
 
-    public void loop2(Consumer<Integer> consumer) {
+    public void loop_for(Consumer<Integer> consumer) {
         for (Node p = head; p != null; p = p.next) {
             consumer.accept(p.value);
         }
     }
 
-    public void loop3(Consumer<Integer> before, Consumer<Integer> after) {
+    public void loop_recursion(Consumer<Integer> before, Consumer<Integer> after) {
         recursion(head, before, after);
+    }
+
+    private void recursion(Node cur, Consumer<Integer> before, Consumer<Integer> after) {
+        if (cur == null) {
+            return;
+        }
+
+        before.accept(cur.value);
+        recursion(cur.next, before, after);
+        after.accept(cur.value);
     }
 
     @Override
@@ -219,22 +170,4 @@ public class SinglyLinkedList implements Iterable<Integer> {
             }
         };
     }
-
-    /************************ 递归 ************************/
-    private void recursion(Node curr, Consumer<Integer> before, Consumer<Integer> after) {
-        if (curr == null) {
-            return;
-        }
-
-        before.accept(curr.value);
-        recursion(curr.next, before, after);
-        after.accept(curr.value);
-    }
 }
-```
-
-## 单链表（哨兵）
-
-```java
-
-```

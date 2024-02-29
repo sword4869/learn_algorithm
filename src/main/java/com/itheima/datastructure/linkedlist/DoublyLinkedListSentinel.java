@@ -6,7 +6,7 @@ import java.util.function.Consumer;
 /*
  * 两个哨兵的
  */
-public class DoublyLinkedListSentinels implements Iterable<Integer>{
+public class DoublyLinkedListSentinel implements Iterable<Integer>{
     static class Node {
         Node pre;
         int value;
@@ -19,24 +19,24 @@ public class DoublyLinkedListSentinels implements Iterable<Integer>{
         }
     }
 
-    private Node head;
-    private Node tail;
+    private Node sentinel;
 
-    public DoublyLinkedListSentinels(){
-        // 放在这里初始化，因为还有next和pre指针的操作
-        head = new Node(null, -1, null);
-        tail = new Node(null, -1 , null);
-        head.next = tail;
-        head.pre = tail;
-        tail.pre = head;
-        tail.next = head;
+    public DoublyLinkedListSentinel(){
+        // sentinel指向自身
+        sentinel = new Node(null, -1, null);
+        sentinel.next = sentinel;
+        sentinel.pre = sentinel;
     }
 
     /***************************** 查找 ******************************/
     public Node findNode(int index){
-        // 也是可以找到哨兵 head, 但不找哨兵 tail
-        int i = -1;
-        for(Node cur = head; cur != tail; cur = cur.next, i++){
+        if(index == -1){
+            return sentinel;
+        }
+
+        // 不可以直接写找到哨兵, 因为那就成了 Node cur = sentinel; cur != sentinel 直接退出
+        int i = 0;
+        for(Node cur = sentinel.next; cur != sentinel; cur = cur.next, i++){
             if (i == index){
                 return cur;
             }
@@ -55,16 +55,16 @@ public class DoublyLinkedListSentinels implements Iterable<Integer>{
     /***************************** 添加 ******************************/
 
     public void addFirst(int value){
-        Node added = new Node(head, value, head.next);
-        Node next = head.next;
-        head.next = added;
+        Node added = new Node(sentinel, value, sentinel.next);
+        Node next = sentinel.next;
+        sentinel.next = added;
         next.pre = added;
     }
 
     public void addLast(int value){
-        Node added = new Node(tail.pre, value, tail);
-        Node pre = tail.pre;
-        tail.pre = added;
+        Node added = new Node(sentinel.pre, value, sentinel);
+        Node pre = sentinel.pre;
+        sentinel.pre = added;
         pre.next = added;
     }
 
@@ -81,23 +81,23 @@ public class DoublyLinkedListSentinels implements Iterable<Integer>{
 
     /**************************** 删除 *******************************/
     public void removeFirst(){
-        if (head.next == tail){
+        if (sentinel.next == sentinel){
             throw new IllegalArgumentException();
         }
-        Node first = head.next;
+        Node first = sentinel.next;
         Node next = first.next;
-        head.next = next;
-        next.pre = head;
+        sentinel.next = next;
+        next.pre = sentinel;
     }
 
     public void removeLast(){
-        if (head.next == tail){
+        if (sentinel.next == sentinel){
             throw new IllegalArgumentException();
         }
-        Node last = tail.pre;
+        Node last = sentinel.pre;
         Node pre = last.pre;
-        pre.next = tail;
-        tail.pre = pre;
+        pre.next = sentinel;
+        sentinel.pre = pre;
     }
 
     public void remove(int index){
@@ -105,9 +105,9 @@ public class DoublyLinkedListSentinels implements Iterable<Integer>{
         if(pre == null){
             throw new IllegalArgumentException();
         }
-        // 如何确定只有首尾两个结点的情况：pre.next == tail
+        // 如何确定只有一个结点的情况：pre.next == sentinel
         Node removed = pre.next;
-        if(removed == tail){
+        if(removed == sentinel){
             throw new IllegalArgumentException();
         }
         Node next = removed.next;
@@ -117,15 +117,15 @@ public class DoublyLinkedListSentinels implements Iterable<Integer>{
 
     /****************** 遍历 ***************************/
     public void loop_while(Consumer<Integer> consumer){
-        Node cur = head.next;
-        while(cur != tail){
+        Node cur = sentinel.next;
+        while(cur != sentinel){
             consumer.accept(cur.value);
             cur = cur.next;
         }
     }
 
     public void loop_for(Consumer<Integer> consumer){
-        for(Node cur = head.next; cur != tail; cur = cur.next){
+        for(Node cur = sentinel.next; cur != sentinel; cur = cur.next){
             consumer.accept(cur.value);
         }
     }
@@ -133,10 +133,10 @@ public class DoublyLinkedListSentinels implements Iterable<Integer>{
     @Override
     public Iterator<Integer> iterator(){
         return new Iterator<Integer>(){
-            Node cur = head.next;
+            Node cur = sentinel.next;
             @Override
             public boolean hasNext(){
-                return cur != tail;
+                return cur != sentinel;
             }
 
             @Override
