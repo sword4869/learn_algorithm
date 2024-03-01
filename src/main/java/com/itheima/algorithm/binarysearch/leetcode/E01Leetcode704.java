@@ -1,4 +1,4 @@
-package com.itheima.algorithm.binarysearch;
+package com.itheima.algorithm.binarysearch.leetcode;
 
 public class E01Leetcode704 {
 

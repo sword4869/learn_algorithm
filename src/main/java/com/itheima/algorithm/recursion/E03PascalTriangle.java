@@ -1,6 +1,4 @@
-package com.itheima.algorithm.recursion_multi;
-
-import java.util.Arrays;
+package com.itheima.algorithm.recursion;
 
 /**
  * 递归杨辉三角(Pascal三角)

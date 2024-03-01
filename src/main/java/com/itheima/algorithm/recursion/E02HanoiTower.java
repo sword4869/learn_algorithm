@@ -1,4 +1,4 @@
-package com.itheima.algorithm.recursion_multi;
+package com.itheima.algorithm.recursion;
 
 import org.springframework.util.StopWatch;
 

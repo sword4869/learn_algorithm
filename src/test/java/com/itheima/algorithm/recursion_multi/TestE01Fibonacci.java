@@ -3,8 +3,8 @@ package com.itheima.algorithm.recursion_multi;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.StopWatch;
 
-import static com.itheima.algorithm.recursion_multi.E01Fibonacci.fibonacci;
-import static com.itheima.algorithm.recursion_multi.E01Fibonacci.fibonacci2;
+import static com.itheima.algorithm.recursion.E01Fibonacci.fibonacci;
+import static com.itheima.algorithm.recursion.E01Fibonacci.fibonacciBasic;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestE01Fibonacci {
@@ -35,7 +35,7 @@ public class TestE01Fibonacci {
         a.stop();
 
         a.start("不带 cache");
-        fibonacci2(40);
+        fibonacciBasic(40);
         a.stop();
 
         System.out.println(a.prettyPrint());

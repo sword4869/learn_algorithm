@@ -1,15 +1,15 @@
-package com.itheima.algorithm.recursion_single;
+package com.itheima.algorithm.recursion;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static com.itheima.algorithm.recursion_single.E04BubbleSort.sort;
+import static com.itheima.algorithm.recursion.E05InsertionSort.sort;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-public class TestE04BubbleSort {
+public class TestE05InsertionSort {
 
     @Test
-    @DisplayName("测试递归冒泡")
+    @DisplayName("测试递归插入")
     public void test1() {
         int[] expected = {1, 2, 3, 4, 5};
         int[] a1 = {5, 4, 3, 2, 1};

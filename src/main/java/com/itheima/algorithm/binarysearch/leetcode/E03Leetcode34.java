@@ -1,4 +1,4 @@
-package com.itheima.algorithm.binarysearch;
+package com.itheima.algorithm.binarysearch.leetcode;
 
 public class E03Leetcode34 {
     public int[] searchRange(int[] a, int target) {

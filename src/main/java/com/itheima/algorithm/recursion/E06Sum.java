@@ -1,4 +1,4 @@
-package com.itheima.algorithm.recursion_single;
+package com.itheima.algorithm.recursion;
 
 /**
  * 递归求和 n + n-1, ... + 1

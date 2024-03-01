@@ -7,26 +7,54 @@ import java.util.Arrays;
  */
 public class BubbleSort {
 
-    private static void bubble(int[] a) {
-        int j = a.length - 1;
-        do {
-            int x = 0;
-            for (int i = 0; i < j; i++) {
-                if (a[i] > a[i + 1]) {
-                    int t = a[i];
-                    a[i] = a[i + 1];
-                    a[i + 1] = t;
-                    x = i;
+    public static void bubbleSortBasic(int[] a) {
+        for (int i = a.length - 1; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                if (a[j] > a[j + 1]) {
+                    int t = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = t;
                 }
             }
-            j = x;
-        } while (j != 0);
+        }
     }
 
-    public static void main(String[] args) {
-        int[] a = {6, 5, 4, 3, 2, 1};
-        System.out.println(Arrays.toString(a));
-        bubble(a);
-        System.out.println(Arrays.toString(a));
+
+    public static void bubbleSortX(int[] a) {
+        for (int i = a.length - 1; i > 0;) {
+            int x = 0;
+            for (int j = 0; j < i; j++) {
+                if (a[j] > a[j + 1]) {
+                    int t = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = t;
+                    x = j;
+                }
+            }
+            i = x;
+        }
+    }
+
+    public static void bubbleSortRecursion(int[] a) {
+        recursion(a, a.length - 1);
+    }
+
+    private static void recursion(int[] a, int i) {
+        // 注意 i == 0 ，不然虽然for循环不走，但 int x =0 ，一直死循环
+        if (i <= 0) {
+            return;
+        }
+
+        int x = 0;
+        for (int j = 0; j < i; j++) {
+            if (a[j] > a[j + 1]) {
+                int t = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = t;
+                x = j;
+            }
+        }
+        recursion(a, x);
+        // recursion(a, i - 1);   // 基础版
     }
 }

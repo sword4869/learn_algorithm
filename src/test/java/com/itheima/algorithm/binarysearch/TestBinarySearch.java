@@ -29,31 +29,6 @@ public class TestBinarySearch {
     }
 
     @Test
-    @DisplayName("测试右移运算")
-    public void test2() {
-        int i = 0;
-        int j = Integer.MAX_VALUE - 1;
-        // 模拟第一次求中间索引
-        int m = (i + j) / 2;
-        // 模拟第二次求中间索引, target 在右侧
-        i = m + 1;
-        assertEquals(1073741824, i);
-        assertEquals(2147483646, j);
-        assertEquals(-1073741826, i + j);
-        m = (i + j) / 2; // 有问题的情况
-        assertEquals(-536870913, m);
-        m = (i + j) >>> 1; // 改正后的情况
-        assertEquals(1610612735, m);
-        /*
-            同一个二进制数
-            1011_1111_1111_1111_1111_1111_1111_1110
-
-            不把最高位视为符号位, 代表 3221225470
-            把最高位视为符号位, 代表 -1073741826
-         */
-    }
-
-    @Test
     @DisplayName("测试 binarySearchAlternative ")
     public void test3() {
         int[] a = {7, 13, 21, 30, 38, 44, 52, 53};
@@ -117,64 +92,81 @@ public class TestBinarySearch {
     @DisplayName("测试 binarySearchLeftmost 返回 -1")
     public void test6() {
         int[] a = {1, 2, 4, 4, 4, 5, 6, 7};
-        assertEquals(0, binarySearchLeftmost1(a, 1));
-        assertEquals(1, binarySearchLeftmost1(a, 2));
-        assertEquals(2, binarySearchLeftmost1(a, 4));
-        assertEquals(5, binarySearchLeftmost1(a, 5));
-        assertEquals(6, binarySearchLeftmost1(a, 6));
-        assertEquals(7, binarySearchLeftmost1(a, 7));
+        assertEquals(0, binarySearchLeftmost(a, 1));
+        assertEquals(1, binarySearchLeftmost(a, 2));
+        assertEquals(2, binarySearchLeftmost(a, 4));
+        assertEquals(5, binarySearchLeftmost(a, 5));
+        assertEquals(6, binarySearchLeftmost(a, 6));
+        assertEquals(7, binarySearchLeftmost(a, 7));
 
-        assertEquals(-1, binarySearchLeftmost1(a, 0));
-        assertEquals(-1, binarySearchLeftmost1(a, 3));
-        assertEquals(-1, binarySearchLeftmost1(a, 8));
+        assertEquals(-1, binarySearchLeftmost(a, 0));
+        assertEquals(-1, binarySearchLeftmost(a, 3));
+        assertEquals(-1, binarySearchLeftmost(a, 8));
     }
 
     @Test
     @DisplayName("测试 binarySearchRightmost 返回 -1")
     public void test7() {
         int[] a = {1, 2, 4, 4, 4, 5, 6, 7};
-        assertEquals(0, binarySearchRightmost1(a, 1));
-        assertEquals(1, binarySearchRightmost1(a, 2));
-        assertEquals(4, binarySearchRightmost1(a, 4));
-        assertEquals(5, binarySearchRightmost1(a, 5));
-        assertEquals(6, binarySearchRightmost1(a, 6));
-        assertEquals(7, binarySearchRightmost1(a, 7));
+        assertEquals(0, binarySearchRightmost(a, 1));
+        assertEquals(1, binarySearchRightmost(a, 2));
+        assertEquals(4, binarySearchRightmost(a, 4));
+        assertEquals(5, binarySearchRightmost(a, 5));
+        assertEquals(6, binarySearchRightmost(a, 6));
+        assertEquals(7, binarySearchRightmost(a, 7));
 
-        assertEquals(-1, binarySearchRightmost1(a, 0));
-        assertEquals(-1, binarySearchRightmost1(a, 3));
-        assertEquals(-1, binarySearchRightmost1(a, 8));
+        assertEquals(-1, binarySearchRightmost(a, 0));
+        assertEquals(-1, binarySearchRightmost(a, 3));
+        assertEquals(-1, binarySearchRightmost(a, 8));
     }
 
     @Test
     @DisplayName("测试 binarySearchLeftmost 返回 i")
     public void test8() {
         int[] a = {1, 2, 4, 4, 4, 7, 8};
-        assertEquals(0, binarySearchLeftmost2(a, 1));
-        assertEquals(1, binarySearchLeftmost2(a, 2));
-        assertEquals(2, binarySearchLeftmost2(a, 4));
-        assertEquals(5, binarySearchLeftmost2(a, 7));
-        assertEquals(6, binarySearchLeftmost2(a, 8));
+        assertEquals(0, binarySearchLeftmostUseful(a, 1));
+        assertEquals(1, binarySearchLeftmostUseful(a, 2));
+        assertEquals(2, binarySearchLeftmostUseful(a, 4));
+        assertEquals(5, binarySearchLeftmostUseful(a, 7));
+        assertEquals(6, binarySearchLeftmostUseful(a, 8));
 
-        assertEquals(0, binarySearchLeftmost2(a, 0));
-        assertEquals(2, binarySearchLeftmost2(a, 3));
-        assertEquals(5, binarySearchLeftmost2(a, 5));
-        assertEquals(7, binarySearchLeftmost2(a, 9));
+        assertEquals(0, binarySearchLeftmostUseful(a, 0));
+        assertEquals(2, binarySearchLeftmostUseful(a, 3));
+        assertEquals(5, binarySearchLeftmostUseful(a, 5));
+        assertEquals(7, binarySearchLeftmostUseful(a, 9));
     }
 
     @Test
     @DisplayName("测试 binarySearchRightmost 返回 i-1")
     public void test9() {
         int[] a = {1, 2, 4, 4, 4, 5, 6, 7};
-        assertEquals(0, binarySearchRightmost2(a, 1));
-        assertEquals(1, binarySearchRightmost2(a, 2));
-        assertEquals(4, binarySearchRightmost2(a, 4));
-        assertEquals(5, binarySearchRightmost2(a, 5));
-        assertEquals(6, binarySearchRightmost2(a, 6));
-        assertEquals(7, binarySearchRightmost2(a, 7));
+        assertEquals(0, binarySearchRightmostUseful(a, 1));
+        assertEquals(1, binarySearchRightmostUseful(a, 2));
+        assertEquals(4, binarySearchRightmostUseful(a, 4));
+        assertEquals(5, binarySearchRightmostUseful(a, 5));
+        assertEquals(6, binarySearchRightmostUseful(a, 6));
+        assertEquals(7, binarySearchRightmostUseful(a, 7));
 
-        assertEquals(0, binarySearchRightmost2(a, 0) + 1);
-        assertEquals(2, binarySearchRightmost2(a, 3) + 1);
-        assertEquals(8, binarySearchRightmost2(a, 8) + 1);
+        assertEquals(0, binarySearchRightmostUseful(a, 0) + 1);
+        assertEquals(2, binarySearchRightmostUseful(a, 3) + 1);
+        assertEquals(8, binarySearchRightmostUseful(a, 8) + 1);
     }
 
+    @Test
+    @DisplayName("测试递归二分查找")
+    public void test10() {
+        int[] a = {7, 13, 21, 30, 38, 44, 52, 53};
+        assertEquals(0, binarySearchRecursion(a, 7));
+        assertEquals(1, binarySearchRecursion(a, 13));
+        assertEquals(2, binarySearchRecursion(a, 21));
+        assertEquals(3, binarySearchRecursion(a, 30));
+        assertEquals(4, binarySearchRecursion(a, 38));
+        assertEquals(5, binarySearchRecursion(a, 44));
+        assertEquals(6, binarySearchRecursion(a, 52));
+        assertEquals(7, binarySearchRecursion(a, 53));
+
+        assertEquals(-1, binarySearchRecursion(a, 0));
+        assertEquals(-1, binarySearchRecursion(a, 15));
+        assertEquals(-1, binarySearchRecursion(a, 60));
+    }
 }

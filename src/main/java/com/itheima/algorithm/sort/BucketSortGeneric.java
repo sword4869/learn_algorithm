@@ -34,7 +34,7 @@ public class BucketSortGeneric {
         for (DynamicArray bucket : buckets) {
             // 3. 排序桶内元素
             int[] array = bucket.array();
-            InsertionSort.sort(array);
+            InsertionSort.insertSortBasic(array);
 //            System.out.println(Arrays.toString(array));
             // 4. 把每个桶排序好的内容，依次放入原始数组
             for (int v : array) {
@@ -74,7 +74,7 @@ public class BucketSortGeneric {
         for (DynamicArray bucket : buckets) {
             // 3. 排序桶内元素
             int[] array = bucket.array();
-            InsertionSort.sort(array);
+            InsertionSort.insertSortBasic(array);
 //            System.out.println(Arrays.toString(array));
             // 4. 把每个桶排序好的内容，依次放入原始数组
             for (int v : array) {
