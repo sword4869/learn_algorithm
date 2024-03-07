@@ -1,10 +1,10 @@
-package com.itheima.datastructure.linkedlist;
+package com.itheima.datastructure.linkedlist.leetcode;
 
 /**
  * 反转链表
  */
 public class E01Leetcode206 {
-    // 方法1
+    // 方法1: 创建新链表
     public ListNode reverseList1(ListNode o1) {
         ListNode n1 = null;
         ListNode p = o1;
@@ -56,7 +56,7 @@ public class E01Leetcode206 {
             return p; // 最后节点
         }
         ListNode last = reverseList3(p.next);
-        p.next.next = p;
+        last.next = p;
         p.next = null;
         return last;
     }
@@ -67,13 +67,13 @@ public class E01Leetcode206 {
         if (o1 == null || o1.next == null) {
             return o1;
         }
-        ListNode o2 = o1.next;
+        ListNode next = o1.next;
         ListNode n1 = o1;
-        while (o2 != null) {
-            o1.next = o2.next;  // 2.
-            o2.next = n1;       // 3.
-            n1 = o2;            // 4.
-            o2 = o1.next;       // 5.
+        while (next != null) {
+            o1.next = next.next;  // 2.
+            next.next = n1;       // 3.
+            n1 = next;            // 4.
+            next = o1.next;       // 5.
         }
         return n1;
     }
