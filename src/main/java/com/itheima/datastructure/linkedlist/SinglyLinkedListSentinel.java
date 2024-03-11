@@ -110,7 +110,7 @@ public class SinglyLinkedListSentinel implements Iterable<Integer> {
 
     /************************ 遍历 ************************/
     public void loop_while(Consumer<Integer> consumer) {
-        Node p = head;
+        Node p = head.next;
         while (p != null) {
             consumer.accept(p.value);
             p = p.next;
@@ -118,13 +118,13 @@ public class SinglyLinkedListSentinel implements Iterable<Integer> {
     }
 
     public void loop_for(Consumer<Integer> consumer) {
-        for (Node p = head; p != null; p = p.next) {
+        for (Node p = head.next; p != null; p = p.next) {
             consumer.accept(p.value);
         }
     }
 
     public void loop_recursion(Consumer<Integer> before, Consumer<Integer> after) {
-        recursion(head, before, after);
+        recursion(head.next, before, after);
     }
 
     @Override
