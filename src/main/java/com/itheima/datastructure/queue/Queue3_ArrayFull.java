@@ -3,30 +3,19 @@ package com.itheima.datastructure.queue;
 import java.util.Iterator;
 
 /**
- * 仅用 head, tail 判断空满, head, tail 需要换算成索引值
- *
+ * head, tail 需要换算成索引值
+ * 
+ * 
  * @param <E> 队列中元素类型
  */
-public class ArrayQueue3<E> implements Queue<E>, Iterable<E> {
-
-    /*
-        求模运算：
-        - 如果除数是 2 的 n 次方
-        - 那么被除数的后 n 位即为余数 (模)
-        - 求被除数的后 n 位方法： 与 2^n-1 按位与
-     */
+public class Queue3_ArrayFull<E> implements Iterable<E> {
 
     private final E[] array;
     int head = 0;
     int tail = 0;
 
     @SuppressWarnings("all")
-    public ArrayQueue3(int c) {
-        // 1. 抛异常
-        /*if ((capacity & capacity - 1) != 0) {
-            throw new IllegalArgumentException("capacity 必须是2的幂");
-        }*/
-        // 2. 改成 2^n    13 -> 16   22 -> 32
+    public Queue3_ArrayFull(int c) {
         c -= 1;
         c |= c >> 1;
         c |= c >> 2;
@@ -37,26 +26,16 @@ public class ArrayQueue3<E> implements Queue<E>, Iterable<E> {
         array = (E[]) new Object[c];
     }
 
-    /*
-        head = 0
-        tail = 3  % 3 = 0
-        capacity=3
-
-        0   1   2
-        d   b   c
-     */
-    @Override
     public boolean offer(E value) {
         if (isFull()) {
             return false;
         }
-//        array[(int) (Integer.toUnsignedLong(tail) % array.length)] = value;
+        // array[(int) (Integer.toUnsignedLong(tail) % array.length)] = value;
         array[tail & (array.length - 1)] = value;
         tail++;
         return true;
     }
 
-    @Override
     public E poll() {
         if (isEmpty()) {
             return null;
@@ -68,7 +47,6 @@ public class ArrayQueue3<E> implements Queue<E>, Iterable<E> {
         return value;
     }
 
-    @Override
     public E peek() {
         if (isEmpty()) {
             return null;
@@ -76,12 +54,10 @@ public class ArrayQueue3<E> implements Queue<E>, Iterable<E> {
         return array[head & (array.length - 1)];
     }
 
-    @Override
     public boolean isEmpty() {
         return head == tail;
     }
 
-    @Override
     public boolean isFull() {
         return tail - head == array.length;
     }

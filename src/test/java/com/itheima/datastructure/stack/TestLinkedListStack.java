@@ -10,7 +10,7 @@ public class TestLinkedListStack {
 
     @Test
     public void push() {
-        LinkedListStack<Object> stack = new LinkedListStack<>(3);
+        Stack1LinkedList<Object> stack = new Stack1LinkedList<>(3);
         stack.push(1);
         stack.push(2);
         stack.push(3);
@@ -21,7 +21,7 @@ public class TestLinkedListStack {
 
     @Test
     public void pop() {
-        LinkedListStack<Object> stack = new LinkedListStack<>(3);
+        Stack1LinkedList<Object> stack = new Stack1LinkedList<>(3);
         stack.push(1);
         stack.push(2);
         stack.push(3);

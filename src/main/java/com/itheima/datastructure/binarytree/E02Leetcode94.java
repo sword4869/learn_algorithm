@@ -1,6 +1,6 @@
 package com.itheima.datastructure.binarytree;
 
-import com.itheima.datastructure.stack.LinkedListStack;
+import com.itheima.datastructure.stack.Stack1LinkedList;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -53,7 +53,7 @@ public class E02Leetcode94 {
         );
         System.out.println(new E02Leetcode94().inorderTraversal(root));
 
-        LinkedListStack<TreeNode> stack = new LinkedListStack<>();
+        Stack1LinkedList<TreeNode> stack = new Stack1LinkedList<>();
 
         TreeNode curr = root; // 代表当前节点
         while (curr != null || !stack.isEmpty()) {

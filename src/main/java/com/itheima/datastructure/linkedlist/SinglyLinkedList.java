@@ -30,9 +30,9 @@ public class SinglyLinkedList implements Iterable<Integer> {
         }
 
         // 最后一个元素，其 next 为 null
-        Node p = null;
-        for (p = head; p.next != null; p = p.next) {
-
+        Node p = head;
+        while(p.next != null){
+            p = p.next;
         }
         return p;
     }
@@ -40,10 +40,13 @@ public class SinglyLinkedList implements Iterable<Integer> {
     private Node findNode(int index) {
         // 没找到返回null
         int i = 0;
-        for(Node p = head; p != null; p = p.next, i++){
+        Node cur = head;
+        while(cur != null){
             if(i == index){
-                return p;
+                return cur;
             }
+            cur = cur.next;
+            i++;
         }
         return null;
     }

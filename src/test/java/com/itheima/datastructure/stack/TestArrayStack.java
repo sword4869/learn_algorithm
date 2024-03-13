@@ -10,7 +10,7 @@ public class TestArrayStack {
 
     @Test
     public void push() {
-        ArrayStack<Object> stack = new ArrayStack<>(3);
+        Stack2Array<Object> stack = new Stack2Array<>(3);
         stack.push(1);
         stack.push(2);
         stack.push(3);
@@ -21,7 +21,7 @@ public class TestArrayStack {
 
     @Test
     public void pop() {
-        ArrayStack<Object> stack = new ArrayStack<>(3);
+        Stack2Array<Object> stack = new Stack2Array<>(3);
         stack.push(1);
         stack.push(2);
         stack.push(3);
@@ -33,7 +33,7 @@ public class TestArrayStack {
 
     @Test
     public void pop2() {
-        ArrayStack<Object> stack = new ArrayStack<>(3);
+        Stack2Array<Object> stack = new Stack2Array<>(3);
         stack.push(1);
         stack.push(2);
         stack.push(3);

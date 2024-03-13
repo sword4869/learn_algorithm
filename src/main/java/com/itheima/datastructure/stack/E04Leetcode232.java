@@ -24,8 +24,8 @@ public class E04Leetcode232 {
             s1.pop()
 
      */
-    ArrayStack<Integer> s1 = new ArrayStack<>(100);
-    ArrayStack<Integer> s2 = new ArrayStack<>(100);
+    Stack2Array<Integer> s1 = new Stack2Array<>(100);
+    Stack2Array<Integer> s2 = new Stack2Array<>(100);
 
     public void push(int x) { //向队列尾添加
         s2.push(x);

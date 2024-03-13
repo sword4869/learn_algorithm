@@ -3,23 +3,22 @@ package com.itheima.datastructure.stack;
 import java.util.Iterator;
 import java.util.StringJoiner;
 
-public class LinkedListStack<E> implements Stack<E>, Iterable<E> {
+public class Stack1LinkedList<E> implements Iterable<E> {
 
     private int capacity = Integer.MAX_VALUE;
     private int size;
     private final Node<E> head = new Node<>(null, null);
 
-    public LinkedListStack() {
+    public Stack1LinkedList() {
     }
 
-    public LinkedListStack(int capacity) {
+    public Stack1LinkedList(int capacity) {
         this.capacity = capacity;
     }
 
     /*
         head -> 2 -> 1 -> null
      */
-    @Override
     public boolean push(E value) {
         if (isFull()) {
             return false;
@@ -32,7 +31,6 @@ public class LinkedListStack<E> implements Stack<E>, Iterable<E> {
     /*
         head -> 2 -> 1 -> null
      */
-    @Override
     public E pop() {
         if (isEmpty()) {
             return null;
@@ -43,7 +41,7 @@ public class LinkedListStack<E> implements Stack<E>, Iterable<E> {
         return first.value;
     }
 
-    @Override
+    
     public E peek() {
         if (isEmpty()) {
             return null;
@@ -51,12 +49,10 @@ public class LinkedListStack<E> implements Stack<E>, Iterable<E> {
         return head.next.value;
     }
 
-    @Override
     public boolean isEmpty() {
         return size == 0;
     }
 
-    @Override
     public boolean isFull() {
         return size == capacity;
     }

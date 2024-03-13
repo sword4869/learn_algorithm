@@ -1,6 +1,6 @@
 package com.itheima.datastructure.deque;
 
-import com.itheima.datastructure.queue.LinkedListQueue;
+import com.itheima.datastructure.queue.Queue4_LinkedList;
 import com.itheima.datastructure.binarytree.TreeNode;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class E01Leetcode103 {
             return result;
         }
 
-        LinkedListQueue<TreeNode> queue = new LinkedListQueue<>();
+        Queue4_LinkedList<TreeNode> queue = new Queue4_LinkedList<>();
         queue.offer(root);
         int c1 = 1; // 当前层节点数
         boolean odd = true; // 奇数层

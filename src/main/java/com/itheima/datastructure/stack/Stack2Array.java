@@ -2,17 +2,17 @@ package com.itheima.datastructure.stack;
 
 import java.util.Iterator;
 
-public class ArrayStack<E> implements Stack<E>, Iterable<E> {
+public class Stack2Array<E> implements Iterable<E> {
 
     private final E[] array;
-    private int top; // 栈顶指针
+    private int top; // 栈顶指针，下一个元素， 栈底 0 1 2 3 4 5 6 7 8 9 栈顶
 
     @SuppressWarnings("all")
-    public ArrayStack(int capacity) {
+    public Stack2Array(int capacity) {
         this.array = (E[]) new Object[capacity];
     }
 
-    @Override
+    
     public boolean push(E value) {
         if (isFull()) {
             return false;
@@ -21,7 +21,7 @@ public class ArrayStack<E> implements Stack<E>, Iterable<E> {
         return true;
     }
 
-    @Override
+    
     public E pop() {
         if (isEmpty()) {
             return null;
@@ -31,7 +31,7 @@ public class ArrayStack<E> implements Stack<E>, Iterable<E> {
         return e;
     }
 
-    @Override
+    
     public E peek() {
         if (isEmpty()) {
             return null;
@@ -39,12 +39,12 @@ public class ArrayStack<E> implements Stack<E>, Iterable<E> {
         return array[top - 1];
     }
 
-    @Override
+    
     public boolean isEmpty() {
         return top == 0;
     }
 
-    @Override
+    
     public boolean isFull() {
         return top == array.length;
     }
@@ -61,12 +61,12 @@ public class ArrayStack<E> implements Stack<E>, Iterable<E> {
         return new Iterator<E>() {
             int p = top;
 
-            @Override
+            
             public boolean hasNext() {
                 return p > 0;
             }
 
-            @Override
+            
             public E next() {
                 return array[--p];
             }

@@ -24,8 +24,8 @@ public class TestArrayQueue1 {
 
     @Test
     public void generic() {
-        ArrayQueue1<String> queue =
-                new ArrayQueue1<>(3);
+        Queue2_ArrayRemaining<String> queue =
+                new Queue2_ArrayRemaining<>(3);
         queue.offer("a");
         queue.offer("b");
         queue.offer("c");
@@ -37,8 +37,8 @@ public class TestArrayQueue1 {
 
     @Test
     public void offerLimit() {
-        ArrayQueue1<Integer> queue =
-                new ArrayQueue1<>(3);
+        Queue2_ArrayRemaining<Integer> queue =
+                new Queue2_ArrayRemaining<>(3);
         queue.offer(1);
         queue.offer(2);
         queue.offer(3);
@@ -51,7 +51,7 @@ public class TestArrayQueue1 {
     @Test
     @DisplayName("测试删除只剩一个节点时")
     public void poll1() {
-        ArrayQueue1<Integer> queue = new ArrayQueue1<>(5);
+        Queue2_ArrayRemaining<Integer> queue = new Queue2_ArrayRemaining<>(5);
         queue.offer(1);
         assertEquals(1, queue.poll());
         assertTrue(queue.isEmpty());
@@ -59,7 +59,7 @@ public class TestArrayQueue1 {
 
     @Test
     public void offer() {
-        ArrayQueue1<Integer> queue = new ArrayQueue1<>(5);
+        Queue2_ArrayRemaining<Integer> queue = new Queue2_ArrayRemaining<>(5);
         queue.offer(1);
         queue.offer(2);
         queue.offer(3);
@@ -71,7 +71,7 @@ public class TestArrayQueue1 {
 
     @Test
     public void peek() {
-        ArrayQueue1<Integer> queue = new ArrayQueue1<>(5);
+        Queue2_ArrayRemaining<Integer> queue = new Queue2_ArrayRemaining<>(5);
         assertNull(queue.peek());
         queue.offer(1);
         assertEquals(1, queue.peek());
@@ -81,7 +81,7 @@ public class TestArrayQueue1 {
 
     @Test
     public void poll() {
-        ArrayQueue1<Integer> queue = new ArrayQueue1<>(5);
+        Queue2_ArrayRemaining<Integer> queue = new Queue2_ArrayRemaining<>(5);
         queue.offer(1);
         queue.offer(2);
         queue.offer(3);

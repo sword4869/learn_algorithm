@@ -11,8 +11,8 @@ public class TestLinkedListQueue {
 
     @Test
     public void offerLimit() {
-        LinkedListQueue<Integer> queue =
-                new LinkedListQueue<>(3);
+        Queue4_LinkedList<Integer> queue =
+                new Queue4_LinkedList<>(3);
         queue.offer(1);
         queue.offer(2);
         queue.offer(3);
@@ -25,7 +25,7 @@ public class TestLinkedListQueue {
     @Test
     @DisplayName("测试删除只剩一个节点时")
     public void poll1() {
-        LinkedListQueue<Integer> queue = new LinkedListQueue<>();
+        Queue4_LinkedList<Integer> queue = new Queue4_LinkedList<>();
         queue.offer(1);
         assertEquals(1, queue.poll());
         assertTrue(queue.isEmpty());
@@ -33,7 +33,7 @@ public class TestLinkedListQueue {
 
     @Test
     public void offer() {
-        LinkedListQueue<Integer> queue = new LinkedListQueue<>();
+        Queue4_LinkedList<Integer> queue = new Queue4_LinkedList<>();
         queue.offer(1);
         queue.offer(2);
         queue.offer(3);
@@ -45,7 +45,7 @@ public class TestLinkedListQueue {
 
     @Test
     public void peek() {
-        LinkedListQueue<Integer> queue = new LinkedListQueue<>();
+        Queue4_LinkedList<Integer> queue = new Queue4_LinkedList<>();
         assertNull(queue.peek());
         queue.offer(1);
         assertEquals(1, queue.peek());
@@ -55,7 +55,7 @@ public class TestLinkedListQueue {
 
     @Test
     public void poll() {
-        LinkedListQueue<Integer> queue = new LinkedListQueue<>();
+        Queue4_LinkedList<Integer> queue = new Queue4_LinkedList<>();
         queue.offer(1);
         queue.offer(2);
         queue.offer(3);

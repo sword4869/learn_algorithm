@@ -3,34 +3,32 @@ package com.itheima.datastructure.queue;
 import java.util.Iterator;
 
 /**
- * 用 size 辅助判断空满
+ * head有元素，tail没元素。索引值
+ * 
+ * tail 指向下一个插入位置
  *
  * @param <E> 队列中元素类型
  */
-public class ArrayQueue2<E> implements Queue<E>, Iterable<E> {
+public class Queue2_ArrayRemaining<E> implements Iterable<E> {
 
     private final E[] array;
     private int head = 0;
     private int tail = 0;
-    private int size = 0; // 元素个数
 
     @SuppressWarnings("all")
-    public ArrayQueue2(int capacity) {
-        array = (E[]) new Object[capacity];
+    public Queue2_ArrayRemaining(int capacity) {
+        array = (E[]) new Object[capacity + 1];
     }
 
-    @Override
     public boolean offer(E value) {
         if (isFull()) {
             return false;
         }
         array[tail] = value;
         tail = (tail + 1) % array.length;
-        size++;
         return true;
     }
-
-    @Override
+    
     public E poll() {
         if (isEmpty()) {
             return null;
@@ -38,11 +36,9 @@ public class ArrayQueue2<E> implements Queue<E>, Iterable<E> {
         E value = array[head];
         array[head] = null; // help GC
         head = (head + 1) % array.length;
-        size--;
         return value;
     }
 
-    @Override
     public E peek() {
         if (isEmpty()) {
             return null;
@@ -50,32 +46,36 @@ public class ArrayQueue2<E> implements Queue<E>, Iterable<E> {
         return array[head];
     }
 
-    @Override
     public boolean isEmpty() {
-        return size == 0;
+        return head == tail;
     }
 
-    @Override
     public boolean isFull() {
-        return size == array.length;
+        return (tail + 1) % array.length == head;
+    }
+    
+    public int getSize(){
+        return (tail - head + array.length) % array.length;
+    }
+
+    public E getIndex(int i){
+        return array[(head + i) % array.length];
     }
 
     @Override
     public Iterator<E> iterator() {
         return new Iterator<E>() {
             int p = head;
-            int count = 0;
 
             @Override
             public boolean hasNext() {
-                return count < size;
+                return p != tail;
             }
 
             @Override
             public E next() {
                 E value = array[p];
                 p = (p + 1) % array.length;
-                count++;
                 return value;
             }
         };

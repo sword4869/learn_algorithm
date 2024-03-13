@@ -16,8 +16,8 @@ public class TestArrayQueue3 {
 
     @Test
     public void generic() {
-        ArrayQueue3<String> queue =
-                new ArrayQueue3<>(4);
+        Queue3_ArrayFull<String> queue =
+                new Queue3_ArrayFull<>(4);
         queue.offer("a");
         queue.offer("b");
         queue.offer("c");
@@ -29,8 +29,8 @@ public class TestArrayQueue3 {
 
     @Test
     public void offerLimit() {
-        ArrayQueue3<Integer> queue =
-                new ArrayQueue3<>(4);
+        Queue3_ArrayFull<Integer> queue =
+                new Queue3_ArrayFull<>(4);
         queue.offer(1);
         queue.offer(2);
         queue.offer(3);
@@ -43,7 +43,7 @@ public class TestArrayQueue3 {
     @Test
     @DisplayName("测试删除只剩一个节点时")
     public void poll1() {
-        ArrayQueue3<Integer> queue = new ArrayQueue3<>(8);
+        Queue3_ArrayFull<Integer> queue = new Queue3_ArrayFull<>(8);
         queue.offer(1);
         assertEquals(1, queue.poll());
         assertTrue(queue.isEmpty());
@@ -51,7 +51,7 @@ public class TestArrayQueue3 {
 
     @Test
     public void offer() {
-        ArrayQueue3<Integer> queue = new ArrayQueue3<>(8);
+        Queue3_ArrayFull<Integer> queue = new Queue3_ArrayFull<>(8);
         queue.offer(1);
         queue.offer(2);
         queue.offer(3);
@@ -63,7 +63,7 @@ public class TestArrayQueue3 {
 
     @Test
     public void peek() {
-        ArrayQueue3<Integer> queue = new ArrayQueue3<>(8);
+        Queue3_ArrayFull<Integer> queue = new Queue3_ArrayFull<>(8);
         assertNull(queue.peek());
         queue.offer(1);
         assertEquals(1, queue.peek());
@@ -73,7 +73,7 @@ public class TestArrayQueue3 {
 
     @Test
     public void poll() {
-        ArrayQueue3<Integer> queue = new ArrayQueue3<>(8);
+        Queue3_ArrayFull<Integer> queue = new Queue3_ArrayFull<>(8);
         queue.offer(1);
         queue.offer(2);
         queue.offer(3);
@@ -91,7 +91,7 @@ public class TestArrayQueue3 {
 
     @Test
     public void boundary() {
-        ArrayQueue3<Integer> queue = new ArrayQueue3<>(16);
+        Queue3_ArrayFull<Integer> queue = new Queue3_ArrayFull<>(16);
         //           2147483647 正整数的最大值 int
         queue.head = 2147483640;
         queue.tail = queue.head;

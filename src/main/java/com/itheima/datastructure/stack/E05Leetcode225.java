@@ -1,6 +1,6 @@
 package com.itheima.datastructure.stack;
 
-import com.itheima.datastructure.queue.ArrayQueue3;
+import com.itheima.datastructure.queue.Queue3_ArrayFull;
 
 /**
  * 单队列模拟栈
@@ -26,7 +26,7 @@ public class E05Leetcode225 {
             - 直接移除队列头元素
 
      */
-    ArrayQueue3<Integer> queue = new ArrayQueue3<>(100);
+    Queue3_ArrayFull<Integer> queue = new Queue3_ArrayFull<>(100);
     private int size = 0;
 
     public void push(int x) {
