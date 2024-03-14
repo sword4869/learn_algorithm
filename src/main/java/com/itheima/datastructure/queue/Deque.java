@@ -1,4 +1,4 @@
-package com.itheima.datastructure.deque;
+package com.itheima.datastructure.queue;
 
 /**
  * 双端队列接口

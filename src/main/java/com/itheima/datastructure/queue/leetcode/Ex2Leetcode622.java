@@ -1,35 +1,34 @@
-package com.itheima.datastructure.queue;
+package com.itheima.datastructure.queue.leetcode;
 
 /**
- * 实现队列,基于数组(未考虑正整数越界)
+ * 实现队列,基于数组
  */
-public class Ex3Leetcode622 {
+public class Ex2Leetcode622 {
+
     public static void main(String[] args) {
-        Ex3Leetcode622 queue = new Ex3Leetcode622(3);
+        Ex2Leetcode622 queue = new Ex2Leetcode622(3);
         queue.enQueue(1);
         queue.enQueue(2);
         queue.enQueue(3);
-        System.out.println(queue.Front());
-        queue.deQueue();
-        System.out.println(queue.Front());
         System.out.println(queue.Rear());
     }
 
     private int head = 0;
     private int tail = 0;
     private final int[] array;
-    private final int capacity;
+    private final int length;
 
-    public Ex3Leetcode622(int capacity) {
-        this.capacity = capacity;
-        array = new int[this.capacity];
+    public Ex2Leetcode622(int capacity) {
+        length = capacity + 1;
+        array = new int[length];
     }
 
     public boolean enQueue(int value) {
         if (isFull()) {
             return false;
         }
-        array[tail++ % capacity] = value;
+        array[tail] = value;
+        tail = (tail + 1) % length;
         return true;
     }
 
@@ -37,7 +36,7 @@ public class Ex3Leetcode622 {
         if (isEmpty()) {
             return false;
         }
-        head++;
+        head = (head + 1) % length;
         return true;
     }
 
@@ -45,14 +44,14 @@ public class Ex3Leetcode622 {
         if (isEmpty()) {
             return -1;
         }
-        return array[head % capacity];
+        return array[head];
     }
 
     public int Rear() {
         if (isEmpty()) {
             return -1;
         }
-        return array[(tail - 1) % capacity];
+        return array[(tail - 1 + length) % length];
     }
 
     public boolean isEmpty() {
@@ -60,6 +59,6 @@ public class Ex3Leetcode622 {
     }
 
     public boolean isFull() {
-        return tail - head == capacity;
+        return (tail + 1) % length == head;
     }
 }

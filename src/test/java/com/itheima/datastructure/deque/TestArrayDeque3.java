@@ -2,6 +2,8 @@ package com.itheima.datastructure.deque;
 
 import org.junit.jupiter.api.Test;
 
+import com.itheima.datastructure.queue.DequeArray3;
+
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,7 +12,7 @@ public class TestArrayDeque3 {
 
     @Test
     public void offer() {
-        ArrayDeque3<Integer> deque = new ArrayDeque3<>(4);
+        DequeArray3<Integer> deque = new DequeArray3<>(4);
         deque.offerFirst(1);
         deque.offerFirst(2);
         deque.offerLast(3);
@@ -20,7 +22,7 @@ public class TestArrayDeque3 {
 
     @Test
     public void poll() {
-        ArrayDeque3<Integer> deque = new ArrayDeque3<>(8);
+        DequeArray3<Integer> deque = new DequeArray3<>(8);
         assertTrue(deque.isEmpty());
         deque.offerLast(1);
         deque.offerLast(2);
@@ -45,7 +47,7 @@ public class TestArrayDeque3 {
 
     @Test
     public void peek(){
-        ArrayDeque3<Integer> deque = new ArrayDeque3<>(8);
+        DequeArray3<Integer> deque = new DequeArray3<>(8);
         deque.offerFirst(1);
         deque.offerLast(2);
         deque.offerFirst(3);

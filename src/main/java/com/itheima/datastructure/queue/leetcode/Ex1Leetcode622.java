@@ -1,4 +1,4 @@
-package com.itheima.datastructure.queue;
+package com.itheima.datastructure.queue.leetcode;
 
 /**
  * 实现队列,基于链表

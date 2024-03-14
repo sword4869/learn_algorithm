@@ -2,6 +2,8 @@ package com.itheima.datastructure.deque;
 
 import org.junit.jupiter.api.Test;
 
+import com.itheima.datastructure.queue.DequeLinkedList;
+
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,7 +13,7 @@ public class TestLinkedListDeque {
     // 3 2 1 4 5
     @Test
     public void offer() {
-        LinkedListDeque<Integer> deque = new LinkedListDeque<>(5);
+        DequeLinkedList<Integer> deque = new DequeLinkedList<>(5);
         deque.offerFirst(1);
         deque.offerFirst(2);
         deque.offerFirst(3);
@@ -23,7 +25,7 @@ public class TestLinkedListDeque {
 
     @Test
     public void poll() {
-        LinkedListDeque<Integer> deque = new LinkedListDeque<>(5);
+        DequeLinkedList<Integer> deque = new DequeLinkedList<>(5);
         deque.offerLast(1);
         deque.offerLast(2);
         deque.offerLast(3);

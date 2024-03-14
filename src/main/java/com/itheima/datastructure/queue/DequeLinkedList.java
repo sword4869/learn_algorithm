@@ -1,4 +1,4 @@
-package com.itheima.datastructure.deque;
+package com.itheima.datastructure.queue;
 
 
 import java.util.Iterator;
@@ -8,8 +8,30 @@ import java.util.Iterator;
  *
  * @param <E> 队列中元素类型
  */
-public class LinkedListDeque<E> implements Deque<E>, Iterable<E> {
+public class DequeLinkedList<E> implements Deque<E>, Iterable<E> {
 
+    static class Node<E> {
+        Node<E> prev;
+        E value;
+        Node<E> next;
+
+        public Node(Node<E> prev, E value, Node<E> next) {
+            this.prev = prev;
+            this.value = value;
+            this.next = next;
+        }
+    }
+
+    int capacity;
+    int size;
+    Node<E> sentinel = new Node<>(null, null, null);
+
+    public DequeLinkedList(int capacity) {
+        this.capacity = capacity;
+        sentinel.next = sentinel;
+        sentinel.prev = sentinel;
+    }
+    
     @Override
     public boolean offerFirst(E e) {
         if (isFull()) {
@@ -113,25 +135,4 @@ public class LinkedListDeque<E> implements Deque<E>, Iterable<E> {
         };
     }
 
-    static class Node<E> {
-        Node<E> prev;
-        E value;
-        Node<E> next;
-
-        public Node(Node<E> prev, E value, Node<E> next) {
-            this.prev = prev;
-            this.value = value;
-            this.next = next;
-        }
-    }
-
-    int capacity;
-    int size;
-    Node<E> sentinel = new Node<>(null, null, null);
-
-    public LinkedListDeque(int capacity) {
-        this.capacity = capacity;
-        sentinel.next = sentinel;
-        sentinel.prev = sentinel;
-    }
 }

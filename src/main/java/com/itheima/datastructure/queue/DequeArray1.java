@@ -1,4 +1,4 @@
-package com.itheima.datastructure.deque;
+package com.itheima.datastructure.queue;
 
 import java.util.Iterator;
 
@@ -10,7 +10,7 @@ import java.util.Iterator;
  *
  * @param <E> 队列中元素类型
  */
-public class ArrayDeque1<E> implements Deque<E>, Iterable<E> {
+public class DequeArray1<E> implements Deque<E>, Iterable<E> {
 
     /*
         h - head
@@ -173,7 +173,7 @@ public class ArrayDeque1<E> implements Deque<E>, Iterable<E> {
     int tail;
 
     @SuppressWarnings("all")
-    public ArrayDeque1(int capacity) {
+    public DequeArray1(int capacity) {
         array = (E[]) new Object[capacity + 1];
     }
 }

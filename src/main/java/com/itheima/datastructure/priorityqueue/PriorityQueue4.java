@@ -16,12 +16,7 @@ public class PriorityQueue4<E extends Priority> implements Queue<E> {
         array = new Priority[capacity];
     }
 
-    /*
-    1. 入堆新元素, 加入到数组末尾 (索引位置 child)
-    2. 不断比较新加元素与它父节点(parent)优先级 (上浮)
-        - 如果父节点优先级低, 则向下移动, 并找到下一个 parent
-        - 直至父节点优先级更高或 child==0 为止
-     */
+   
     @Override
     public boolean offer(E offered) {
         if (isFull()) {
