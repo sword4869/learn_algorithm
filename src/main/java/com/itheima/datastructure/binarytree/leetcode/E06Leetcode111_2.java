@@ -1,7 +1,9 @@
-package com.itheima.datastructure.binarytree;
+package com.itheima.datastructure.binarytree.leetcode;
 
 import java.util.LinkedList;
 import java.util.Queue;
+
+import com.itheima.datastructure.binarytree.TreeNode;
 
 /**
  * 二叉树最小深度 - 层序遍历实现

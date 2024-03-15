@@ -1,7 +1,9 @@
-package com.itheima.datastructure.binarytree;
+package com.itheima.datastructure.binarytree.leetcode;
 
 
 import java.util.Arrays;
+
+import com.itheima.datastructure.binarytree.TreeNode;
 
 /**
  * 根据前序中序遍历结果构造二叉树

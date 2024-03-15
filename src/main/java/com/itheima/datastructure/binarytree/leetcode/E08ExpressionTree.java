@@ -1,4 +1,4 @@
-package com.itheima.datastructure.binarytree;
+package com.itheima.datastructure.binarytree.leetcode;
 
 import java.util.LinkedList;
 

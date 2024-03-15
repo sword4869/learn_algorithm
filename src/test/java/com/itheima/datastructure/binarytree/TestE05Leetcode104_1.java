@@ -2,6 +2,8 @@ package com.itheima.datastructure.binarytree;
 
 import org.junit.jupiter.api.Test;
 
+import com.itheima.datastructure.binarytree.leetcode.E05Leetcode104_1;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestE05Leetcode104_1 {

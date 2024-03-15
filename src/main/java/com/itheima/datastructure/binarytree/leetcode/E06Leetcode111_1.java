@@ -1,4 +1,6 @@
-package com.itheima.datastructure.binarytree;
+package com.itheima.datastructure.binarytree.leetcode;
+
+import com.itheima.datastructure.binarytree.TreeNode;
 
 /**
  * 二叉树最小深度 - 后序遍历实现

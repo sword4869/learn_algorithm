@@ -1,7 +1,9 @@
-package com.itheima.datastructure.binarytree;
+package com.itheima.datastructure.binarytree.leetcode;
 
 import java.util.LinkedList;
 import java.util.Queue;
+
+import com.itheima.datastructure.binarytree.TreeNode;
 
 /**
  * 二叉树最大深度 - 使用层序遍历
