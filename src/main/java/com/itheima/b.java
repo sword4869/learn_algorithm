@@ -11,20 +11,13 @@ import java.util.regex.Pattern;
 
 public class b {
     public static void main(String[] args) {
-        /* 栈 */
-        LinkedList<Integer> stack = new LinkedList<>();
-        stack.push(12);
-        stack.push(13);
-        stack.push(14);
-        System.out.println(stack.pop()); // 14
-        System.out.println(stack.poll()); // 13
-        System.out.println(stack.remove()); // 12
+        int a = Integer.MAX_VALUE;
+        
+        // 强制类型转换比+1更优先
+        long b = (long)a + 1;
+        System.out.println(b);
 
-        /* 队列 */
-        LinkedList<Integer> queue = new LinkedList<>();
-        queue.offer(12);
-        queue.add(13);
-        System.out.println(queue.pop()); // 12
-        // poll^
+        long c = a + 1;
+        System.out.println(c);
     }
 }
