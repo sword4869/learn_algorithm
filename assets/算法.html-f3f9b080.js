@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-bfcf7b60","path":"/%E5%9B%BE/%E7%AE%97%E6%B3%95.html","title":"","lang":"en-US","frontmatter":{},"headers":[{"level":2,"title":"Dijkstra","slug":"dijkstra","link":"#dijkstra","children":[]}],"git":{},"readingTime":{"minutes":0.18,"words":54},"filePathRelative":"图/算法.md"}');export{t as data};

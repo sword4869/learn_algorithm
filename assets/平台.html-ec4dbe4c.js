@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-7b8e8a4c","path":"/%E5%B9%B3%E5%8F%B0.html","title":"","lang":"en-US","frontmatter":{},"headers":[],"git":{},"readingTime":{"minutes":0.19,"words":56},"filePathRelative":"平台.md"}');export{e as data};
