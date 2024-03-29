@@ -23,40 +23,5 @@ public class InsertionSort {
         }
     }
 
-    /*
-     *  比上面赋值次数更多
-     */
-    public static void insertSortSwap(int[] a){
-        for (int low = 1; low < a.length; low++) {
-            int i = low - 1;    // 遍历检查 low 左边的
-            // 如果左边大于的就右移数组, a[low]就是初始的a[i+1]
-            while (i >= 0 && a[i] > a[i+1]) {
-                // 直接交换
-                int t = a[i];
-                a[i] = a[i+1];
-                a[i+1] = t;
-                i--;
-            }
-        }
-    }
 
-    public static void insertSortRecursion(int[] a) {
-        recursion(a, 1);
-    }
-
-    public static void recursion(int[] a, int low) {
-        if (low >= a.length) {
-            return;
-        }
-        int l = a[low];
-        int i = low - 1;
-        while (i >= 0 && a[i] > l) {
-            a[i + 1] = a[i];
-            i--;
-        }
-        if (i != low - 1) {
-            a[i + 1] = l;
-        }
-        recursion(a, low + 1);
-    }
 }
