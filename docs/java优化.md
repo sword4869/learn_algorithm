@@ -1,6 +1,17 @@
 - 正则表达式性能要低。
 -  lambda比正常写性能要低
+- swap
 
+    ```java
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+    ```
+    ```java
+    a ^= b;
+    b ^= a;
+    a ^= b;
+    ```
 - 大小
 
     ![alt text](../images/image-31.png)
