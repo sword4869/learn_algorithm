@@ -3,14 +3,28 @@
 - swap
 
     ```java
-    a = a ^ b;
-    b = a ^ b;
-    a = a ^ b;
-    ```
-    ```java
+    // a = a ^ b;
+    // b = a ^ b;
+    // a = a ^ b;
+
     a ^= b;
     b ^= a;
     a ^= b;
+    ```
+    但是数组不可直接写，会在异或相等元素时出问题。上面可以是因为a、b是两个变量，而nums[i] 只有一个变量。
+    ```java
+    // public void swap(int[] nums, int i, int j) {
+    //     nums[i] = nums[i] ^ nums[j];    // x = x ^ x = 0
+    //     nums[j] = nums[i] ^ nums[j];    // x = 0 ^ 0 = 0
+    //     nums[i] = nums[i] ^ nums[j];    // x = 0 ^ 0 = 0
+    // }
+
+    public void swap(int[] nums, int i, int j) {
+        if(i == j) return;
+        nums[i] = nums[i] ^ nums[j];
+        nums[j] = nums[i] ^ nums[j];
+        nums[i] = nums[i] ^ nums[j];
+    }
     ```
 - 大小
 
