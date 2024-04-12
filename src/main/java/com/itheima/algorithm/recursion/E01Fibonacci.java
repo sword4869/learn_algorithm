@@ -19,8 +19,8 @@ public class E01Fibonacci {
         return x + y;
     }
 
-    /**
-     * <h3>使用 Memoization(记忆法, 也称备忘录) 改进</h3>
+    /*
+     * 用递归填满记忆数组: 初始化前两个数
      */
     public static int fibonacciRecursion1(int n) {
         int[] cache = new int[n + 1];
@@ -31,9 +31,7 @@ public class E01Fibonacci {
         return f(n, cache);
     }
 
-    /*
-     * 用递归填满记忆数组: 初始化前两个数
-     */
+   
     private static int f(int n, int[] cache) {
         if (cache[n] != -1) {
             return cache[n];
@@ -45,18 +43,16 @@ public class E01Fibonacci {
         return cache[n];
     }
 
-    /**
-     * <h3>使用 Memoization(记忆法, 也称备忘录) 改进</h3>
-     */
+    /*
+    * 用递归填满记忆数组: 在边界条件内写初始化条件
+    */
     public static int fibonacciRecursion2(int n) {
         int[] cache = new int[n + 1];
         Arrays.fill(cache, -1); // [-1,-1,-1,-1,-1,-1]
         return f2(n, cache);
     }
 
-    /*
-     * 用递归填满记忆数组: 在边界条件内写初始化条件
-     */
+    
     private static int f2(int n, int[] cache) {
         if (cache[n] != -1) {
             return cache[n];
@@ -77,4 +73,12 @@ public class E01Fibonacci {
         return cache[n];
     }
 
+    /*
+    * 动态规划1
+    */
+    public static int fibonacciRecursion3(int n) {
+        int[] cache = new int[n + 1];
+        Arrays.fill(cache, -1); // [-1,-1,-1,-1,-1,-1]
+        return f2(n, cache);
+    }
 }

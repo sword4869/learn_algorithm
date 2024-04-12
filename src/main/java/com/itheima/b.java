@@ -20,4 +20,8 @@ public class b {
         long c = a + 1;
         System.out.println(c);
     }
+
+    public int[] test(){
+        return new int[3]{1, 2, 3};
+    }
 }
