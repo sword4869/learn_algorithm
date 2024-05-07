@@ -1,12 +1,12 @@
-- [1. 阶乘](#1-阶乘)
-- [2. sum](#2-sum)
-- [3. 汉诺塔](#3-汉诺塔)
-- [4. 杨辉三角](#4-杨辉三角)
-- [5. 递归反向打印字符串](#5-递归反向打印字符串)
+- [阶乘](#阶乘)
+- [sum](#sum)
+- [汉诺塔](#汉诺塔)
+- [杨辉三角](#杨辉三角)
+- [递归反向打印字符串](#递归反向打印字符串)
 
 
 ---
-### 1. 阶乘
+### 阶乘
 
 
 <details>
@@ -32,7 +32,7 @@ public class E01Factorial {
 </details>
 
 
-### 2. sum
+### sum
 
 
 <details>
@@ -54,7 +54,7 @@ public static void main(String[] args) {
 </details>
 
 
-### 3. 汉诺塔
+### 汉诺塔
 
 ![alt text](../../../../../../../images/image-29.png)
 
@@ -123,7 +123,7 @@ public class E02HanoiTower {
 </details>
 
 
-### 4. 杨辉三角
+### 杨辉三角
 
 斜着看，行 $i$，列 $j$
 ```
@@ -263,7 +263,7 @@ public class E03PascalTriangle {
 </details>
 
 
-### 5. 递归反向打印字符串
+### 递归反向打印字符串
 
 
 <details>
