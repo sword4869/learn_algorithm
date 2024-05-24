@@ -59,18 +59,18 @@ public class Main {
 ```java
 import java.util.*;
 
-// 输入
-import java.util.Scanner;
+// // 输入
+// import java.util.Scanner;
 
-// 集合
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-...
+// // 集合
+// import java.util.LinkedList;
+// import java.util.List;
+// import java.util.Map;
+// ...
 
-// 帮手
-import java.util.Arrays;
-import java.util.stream.Collectors;
+// // 帮手
+// import java.util.Arrays;
+// import java.util.stream.Collectors;
 ```
 
 `java.lang.*`: 不需要导
