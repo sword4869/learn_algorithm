@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-75c88561","path":"/DFS.html","title":"","lang":"en-US","frontmatter":{},"headers":[{"level":2,"title":"BFS","slug":"bfs","link":"#bfs","children":[]},{"level":2,"title":"DFS","slug":"dfs","link":"#dfs","children":[]}],"git":{},"readingTime":{"minutes":0.22,"words":66},"filePathRelative":"DFS.md"}');export{e as data};

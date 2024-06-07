@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-7193f137","path":"/%E6%95%B0%E5%AD%A6/","title":"数学","lang":"en-US","frontmatter":{"title":"数学","article":false},"headers":[],"git":{},"readingTime":{"minutes":0,"words":1},"filePathRelative":null}');export{e as data};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-47516ad2","path":"/%E5%B9%B3%E5%8F%B0/%E5%8A%9B%E6%89%A3.html","title":"","lang":"en-US","frontmatter":{},"headers":[],"git":{},"readingTime":{"minutes":0.19,"words":56},"filePathRelative":"平台/力扣.md"}');export{e as data};

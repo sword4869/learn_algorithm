@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-7d1c6d2c","path":"/leetcode100/","title":"Leetcode100","lang":"en-US","frontmatter":{"title":"Leetcode100","article":false},"headers":[],"git":{},"readingTime":{"minutes":0,"words":1},"filePathRelative":null}');export{e as data};

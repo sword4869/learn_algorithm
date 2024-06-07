@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-37996c1f","path":"/%E8%84%91%E7%AD%8B%E6%80%A5%E8%BD%AC%E5%BC%AF/","title":"脑筋急转弯","lang":"en-US","frontmatter":{"title":"脑筋急转弯","article":false},"headers":[],"git":{},"readingTime":{"minutes":0,"words":1},"filePathRelative":null}');export{e as data};

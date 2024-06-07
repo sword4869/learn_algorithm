@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-e183ee96","path":"/%E8%84%91%E7%AD%8B%E6%80%A5%E8%BD%AC%E5%BC%AF/%E9%9D%92%E8%9B%99%E8%B7%B3%E4%BA%95.html","title":"","lang":"en-US","frontmatter":{},"headers":[],"git":{},"readingTime":{"minutes":0.42,"words":127},"filePathRelative":"脑筋急转弯/青蛙跳井.md"}');export{e as data};

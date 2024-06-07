@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-cb208f4c","path":"/%E6%8E%92%E5%BA%8F/%E6%8F%92%E5%85%A5.html","title":"","lang":"en-US","frontmatter":{},"headers":[],"git":{},"readingTime":{"minutes":0.21,"words":62},"filePathRelative":"排序/插入.md"}');export{e as data};

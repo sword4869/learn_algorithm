@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-638609a1","path":"/%E8%83%8C%E9%A2%98.html","title":"","lang":"en-US","frontmatter":{},"headers":[],"git":{},"readingTime":{"minutes":0.01,"words":4},"filePathRelative":"背题.md"}');export{e as data};

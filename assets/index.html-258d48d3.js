@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-fef2baa0","path":"/%E5%B9%B3%E5%8F%B0/","title":"平台","lang":"en-US","frontmatter":{"title":"平台","article":false},"headers":[],"git":{},"readingTime":{"minutes":0,"words":1},"filePathRelative":null}');export{e as data};
