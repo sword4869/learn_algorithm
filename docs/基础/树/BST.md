@@ -13,14 +13,14 @@
 3. 二叉查找树→加入特殊的平衡规则，红黑树。红黑树，是自平衡的二叉查找树。
 
 ## 1. 二叉查找树
-![Alt text](../../images/image-6.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132310382.png)
 
 弊端：
-![Alt text](../../images/image-7.png)
+![Alt text](../../../images/image-7.png)
 
 ## 2. 平衡二叉树
 
-![Alt text](../../images/image-8.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132310761.png)
 
 双左则右，左右则左右：
 - 左左：一次右旋
@@ -28,45 +28,45 @@
 - 右右：一次左旋
 - 右左：一次子树右旋，一次左旋
 
-![Alt text](../../images/image-14.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132310837.png)
 
-![Alt text](../../images/image-15.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132311904.png)
 
-![Alt text](../../images/image-16.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132311072.png)
 
-![Alt text](../../images/image-17.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132311164.png)
 
 ### 2.1. 旋转机制
 
-![Alt text](../../images/image-9.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132311535.png)
 
-![Alt text](../../images/image-10.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132311857.png)
 
 #### 2.1.1. 左旋
 
-![Alt text](../../images/image-11.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132311080.png)
 
 #### 2.1.2. 右旋转
 
-![Alt text](../../images/image-12.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132311170.png)
 
-![Alt text](../../images/image-13.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132311211.png)
 
 ## 3. 红黑树(平衡二叉B树)
 
 增删改查性能都很好。
 
-![Alt text](../../images/image-18.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132311131.png)
 
-![Alt text](../../images/image-19.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132311356.png)
 
-![Alt text](../../images/image-20.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132311445.png)
 
 ### 3.1. 添加结点
 
 默认颜色:添加节点默认是红色的(效率高)
 
-![Alt text](../../images/image-21.png)
+![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132311328.png)
 
 **父黑叔黑爷红**
 
@@ -96,12 +96,12 @@
 
 - 添加15：非根、父红、叔红。
 
-    ![Alt text](../../images/image-23.png)
+    ![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132310614.png)
 
 - 添加14：非根、父红、叔黑，父左子左。
 
-    ![Alt text](../../images/image-24.png)
+    ![Alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132310746.png)
 
 - 添加16：非根、父红、叔黑、父左子右。
 
-    ![alt text](../../images/image-28.png)
+    ![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406132310048.png)
