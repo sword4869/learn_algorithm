@@ -47,3 +47,5 @@ LinkedList<Integer> s/q = new LinkedList<>();
 个数：`size()`
 
 是空：`isEmpty()`
+
+特殊：出栈底、出队尾：`pollLast()`
