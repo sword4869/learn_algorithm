@@ -24,6 +24,16 @@ String s = list.get(0);
 LinkedList<Integer> s/q = new LinkedList<>();
 ```
 
+```java
+// 注意push的结果是反向的
+LinkedList<Integer> stack = new LinkedList<>();
+stack.push(1);
+stack.push(2);
+stack.push(3);
+System.out.println(stack);   					// [3, 2, 1]
+System.out.println(new ArrayList<>(stack));  	// [3, 2, 1]
+```
+
 
 
 栈：
