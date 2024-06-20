@@ -19,20 +19,12 @@ public class Heap {
         this.max = max;
     }
 
-    /**
-     * 获取堆顶元素
-     *
-     * @return 堆顶元素
-     */
+    // 获取堆顶元素
     public int peek() {
         return array[0];
     }
 
-    /**
-     * 删除堆顶元素
-     *
-     * @return 堆顶元素
-     */
+    // 删除堆顶元素
     public int poll() {
         int top = array[0];
         swap(0, size - 1);
@@ -41,12 +33,7 @@ public class Heap {
         return top;
     }
 
-    /**
-     * 删除指定索引处元素
-     *
-     * @param index 索引
-     * @return 被删除元素
-     */
+    // 删除指定索引处元素
     public int poll(int index) {
         int deleted = array[index];
         up(Integer.MAX_VALUE, index);
@@ -54,21 +41,13 @@ public class Heap {
         return deleted;
     }
 
-    /**
-     * 替换堆顶元素
-     *
-     * @param replaced 新元素
-     */
+    // 替换堆顶元素
     public void replace(int replaced) {
         array[0] = replaced;
         down(0);
     }
 
-    /**
-     * 堆的尾部添加元素
-     *
-     * @param offered 新元素
-     */
+    // 堆的尾部添加元素
     public void offer(int offered) {
         if (size == array.length) {
             // 扩容

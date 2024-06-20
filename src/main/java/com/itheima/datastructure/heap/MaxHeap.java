@@ -12,12 +12,14 @@ public class MaxHeap {
     public MaxHeap(int capacity) {
         this.array = new int[capacity];
     }
+    
+    public MaxHeap(int[] array) {
+        this.array = array;
+        this.size = array.length;
+        heapify();
+    }
 
-    /**
-     * 获取堆顶元素
-     *
-     * @return 堆顶元素
-     */
+    // 获取堆顶元素
     public int peek() {
         return array[0];
     }
@@ -88,11 +90,6 @@ public class MaxHeap {
         array[child] = offered;
     }
 
-    public MaxHeap(int[] array) {
-        this.array = array;
-        this.size = array.length;
-        heapify();
-    }
 
     // 建堆
     private void heapify() {
