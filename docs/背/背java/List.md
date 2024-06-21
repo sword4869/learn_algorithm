@@ -2,6 +2,13 @@
 
 `List<List<Integer>> result = new ArrayList<>();`
 
+```java
+ArrayList<String>[] dp = new ArrayList[n+1];
+for(int i = 0; i <= n; i++){
+    dp[i] = new ArrayList<>();
+}
+```
+
 
 
 ```java

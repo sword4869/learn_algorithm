@@ -1,16 +1,10 @@
-- [阶乘](#阶乘)
-- [sum](#sum)
-- [汉诺塔](#汉诺塔)
-- [杨辉三角](#杨辉三角)
-- [递归反向打印字符串](#递归反向打印字符串)
-
+[TOC]
 
 ---
 ### 阶乘
 
 
-<details>
-<summary>code</summary>
+<details>123</details>
 
 ```java
 public class E01Factorial {
@@ -21,7 +15,7 @@ public class E01Factorial {
         }
         return n * f(n - 1);
     }
-
+    
     public static void main(String[] args) {
         int f = f(5);
         System.out.println(f);
@@ -56,7 +50,7 @@ public static void main(String[] args) {
 
 ### 汉诺塔
 
-![alt text](../../../../../../../images/image-29.png)
+![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211818525.png)
 
 以最后一个盘子为分界：
 - 把 n-1 个盘子，由a,借c,移至b
@@ -135,12 +129,12 @@ public class E02HanoiTower {
 ```
 
 * 递归：
-    
+  
     当前元素 = 上一行左上角元素 + 上一行上面元素
 
     $[i][j] = [i-1][j-1] + [i-1][j]$
 * 边界条件：
-    
+  
     当面没有元素 $a[i-1][j]$ 不存在————对应斜边  $i=j$ 
     
     或者左上角没有元素 $a[i-1][j-1]$————对应最左一列 $j=0$ 

@@ -64,7 +64,7 @@ class Solution {
 
 ## 37.解数独
 
-![alt text](../../../../../../../images/image-70.png)
+![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211824045.png)
 
 行、列、整个board的9个9宫格：表示vis。
 - 每个内都是9个数的数组，数组中下标1元素为true表示已经有0了。
@@ -127,7 +127,7 @@ class Solution {
 
 ## 51.N皇后
 
-![alt text](../../../../../../../images/image-77.png)
+![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211824315.png)
 
 ```java
 class Solution {

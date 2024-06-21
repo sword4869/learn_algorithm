@@ -1,42 +1,31 @@
-- [1. 不同的二叉搜索树](#1-不同的二叉搜索树)
-- [2. 括号生成](#2-括号生成)
-- [3. 出栈方案](#3-出栈方案)
-- [4. 凸多边形的三角划分](#4-凸多边形的三角划分)
-- [5. 合法路径](#5-合法路径)
-- [6. 01序列](#6-01序列)
-- [7. 序列前缀和非负](#7-序列前缀和非负)
-- [8. 不相交弦问题](#8-不相交弦问题)
-- [9. 阶梯的矩形划分](#9-阶梯的矩形划分)
+[TOC]
 
 
 ---
-![alt text](../../../images/image-58.png)
+注意：C0=1，【1+1=2】
 
-C(n) = $C^n_{2n} - C^{n−1}_{2n}$
+
 
 1,2,5,14,42,132,
-## 1. 不同的二叉搜索树
 
-$c_i$ 就是以 i 为 根节点，左子树是 $c_{i-1}$，右子树是$ c_{j-i}$
-```java
-class Solution {
-    public int numTrees(int n) {
-        int[] dp = new int[n + 1];
-        dp[0] = 1;
-        dp[1] = 1;
-        for (int j = 2; j <= n; j++) {
-            for (int i = 1; i <= j; i++) {
-                dp[j] += dp[i - 1] * dp[j - i];
-            }
-        }
-        return dp[n];
-    }
-}
-```
+![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211815135.png)
+
+$C(n) = C^n_{2n} - C^{n−1}_{2n}$​
+
+$\displaystyle C(n) = \sum_{i=1}^{n}(C(i)\times C(n-i))$
+
+​	$c_i$ 就是以 i 为 根节点，左子树是 $c_{i-1}$，右子树是$ c_{n-i}$
+
+
+
+# 不同的二叉搜索树
+
+ [96. 不同的二叉搜索树.md](..\..\题\leetcode\96. 不同的二叉搜索树.md) 
+
 
 ## 2. 括号生成
 
-![alt text](../../../images/image-59.png)
+![image-20240621193416531](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211934778.png)
 
 - 根节点是 `()`， 左子树是根节点的里面的东西 `(...)`，右子树是根节点括号右边的东西 `()...`
 
@@ -79,7 +68,7 @@ n个元素进栈序列为: 1, 2, 3, 4，... n,则有多少种出栈序列。
 
 选一条边，再选不是这个边的顶点，连线。
 
-![alt text](../../../images/image-60.png)
+![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211816985.png)
 
 ## 5. 合法路径
 
@@ -87,9 +76,9 @@ n个元素进栈序列为: 1, 2, 3, 4，... n,则有多少种出栈序列。
 
 y=x+1 这条线。所有的合法路径都是不能碰到这条线的，碰到即说明是一条不合法路径。
 
-![alt text](../../../images/image-61.png)
+![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211816541.png)
 
-![alt text](../../../images/Snipaste_2024-04-17_12-23-34.png)
+![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211816003.png)
 
 路径总数为在2n 次移动中选n次向上移动，即$C^n_{2n}$，不合法路径总数是$C^{n−1}_{2n}$
 
@@ -110,15 +99,15 @@ y=x+1 这条线。所有的合法路径都是不能碰到这条线的，碰到�
 
 当n=4时，一种合法的配对方案为如图
 
-![alt text](../../../images/image-62.png)
+![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211816146.png)
 
 这个问题没有上面的问题那么显然，我们规定一个点为初始点，然后规定一个方向为正方向。如规定最上面那个点为初始点，逆时针方向为正方向。
 
 然后我们把一个匹配第一次遇到的点（称为起点）旁边写一个左括号`(`，一个匹配第二次遇到的点（称为终点）旁边写一个右括号`)` 
 
-![alt text](../../../images/image-63.png)
+![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211816826.png)
 
 ## 9. 阶梯的矩形划分
 一个阶梯可以被若干个矩形拼出来
 
-![alt text](../../../images/image-64.png)
+![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211816374.png)
