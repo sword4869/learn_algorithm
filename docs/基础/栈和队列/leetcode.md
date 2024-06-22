@@ -6,6 +6,8 @@
 
 [232. 用栈实现队列.md](..\..\题\leetcode\232. 用栈实现队列.md) ：输入栈负责缓存输入，输出栈负责逆序化。 
 
+![image-20240622110725828](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406221107876.png)
+
 
 
 [155最小栈.md](..\..\题\leetcode\155最小栈.md) 
