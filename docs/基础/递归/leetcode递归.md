@@ -4,8 +4,6 @@
 ### 阶乘
 
 
-<details>123</details>
-
 ```java
 public class E01Factorial {
 
@@ -23,14 +21,11 @@ public class E01Factorial {
 }
 ```
 
-</details>
 
 
 ### sum
 
 
-<details>
-<summary>code</summary>
 
 ```java
 public static long sum(long n) {
@@ -45,9 +40,6 @@ public static void main(String[] args) {
 }
 ```
 
-</details>
-
-
 ### 汉诺塔
 
 ![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211818525.png)
@@ -58,8 +50,6 @@ public static void main(String[] args) {
 - 把 n-1 个盘子，由b,借a,移至c
 
 
-<details>
-<summary>code</summary>
 
 ```java
 package com.itheima.algorithm.recursion;
@@ -114,8 +104,6 @@ public class E02HanoiTower {
 }
 ```
 
-</details>
-
 
 ### 杨辉三角
 
@@ -143,8 +131,6 @@ public class E02HanoiTower {
 
 
 
-<details>
-<summary>code</summary>
 
 ```java
 package com.itheima.algorithm.recursion;
@@ -254,14 +240,9 @@ public class E03PascalTriangle {
 }
 ```
 
-</details>
-
 
 ### 递归反向打印字符串
 
-
-<details>
-<summary>code</summary>
 
 ```java
 public class E02ReversePrintString {
@@ -295,5 +276,3 @@ public class E02ReversePrintString {
     }
 }
 ```
-
-</details>

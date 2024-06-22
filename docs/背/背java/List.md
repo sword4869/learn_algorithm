@@ -6,6 +6,7 @@
 ArrayList<String>[] dp = new ArrayList[n+1];
 for(int i = 0; i <= n; i++){
     dp[i] = new ArrayList<>();
+    // dp[i] = new ArrayList<String>();  也行
 }
 ```
 
