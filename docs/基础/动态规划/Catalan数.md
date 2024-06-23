@@ -18,42 +18,10 @@ $\displaystyle C(n) = \sum_{i=1}^{n}(C(i)\times C(n-i))$
 
 
 
-# 不同的二叉搜索树
+[96. 不同的二叉搜索树.md](..\..\题\leetcode\96. 不同的二叉搜索树.md) : 基本Catalan数如何生成 `dp[i] += dp[j-1] + dp[i-j]`
 
- [96. 不同的二叉搜索树.md](..\..\题\leetcode\96. 不同的二叉搜索树.md) 
+[22. 括号生成.md](..\..\题\leetcode\22. 括号生成.md) : Catalan数的生成模式如何扩展
 
-
-## 2. 括号生成
-
-![image-20240621193416531](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211934778.png)
-
-- 根节点是 `()`， 左子树是根节点的里面的东西 `(...)`，右子树是根节点括号右边的东西 `()...`
-
-- C0 = `""`
-
-```java
-class Solution {
-    public List<String> generateParenthesis(int n) {
-        ArrayList<String>[] dp = new ArrayList[n + 1];
-        for (int j = 0; j <= n; j++) {
-            dp[j] = new ArrayList<String>();
-        }
-        dp[0].add("");
-        dp[1].add("()");
-
-        for (int j = 2; j <= n; j++) {
-            for (int i = 1; i <= j; i++) {
-                for (String left : dp[i - 1]) {
-                    for (String right : dp[j - i]) {
-                        dp[j].add("(" + left + ")" + right);
-                    }
-                }
-            }
-        }
-        return dp[n];
-    }
-}
-```
 
 ## 3. 出栈方案
 n个元素进栈序列为: 1, 2, 3, 4，... n,则有多少种出栈序列。
