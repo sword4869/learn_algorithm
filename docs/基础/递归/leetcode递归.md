@@ -1,7 +1,7 @@
 [TOC]
 
 ---
-### 阶乘
+## 阶乘
 
 
 ```java
@@ -23,7 +23,7 @@ public class E01Factorial {
 
 
 
-### sum
+## sum
 
 
 
@@ -40,7 +40,9 @@ public static void main(String[] args) {
 }
 ```
 
-### 汉诺塔
+## 汉诺塔
+
+[12.4  汉诺塔问题 - Hello 算法 (hello-algo.com)](https://www.hello-algo.com/chapter_divide_and_conquer/hanota_problem/#3)
 
 ![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211818525.png)
 
@@ -104,8 +106,7 @@ public class E02HanoiTower {
 }
 ```
 
-
-### 杨辉三角
+## 杨辉三角
 
 斜着看，行 $i$，列 $j$
 ```
@@ -241,7 +242,7 @@ public class E03PascalTriangle {
 ```
 
 
-### 递归反向打印字符串
+## 递归反向打印字符串
 
 
 ```java

@@ -32,6 +32,12 @@ for(int i = 0; i <= n; i++){
     dp[i] = new ArrayList<>();
     // dp[i] = new ArrayList<String>();  也行
 }
+
+
+List<List<Float>> buckets = new ArrayList<>();
+for (int i = 0; i < k; i++) {
+    buckets.add(new ArrayList<>());
+}
 ```
 
 
