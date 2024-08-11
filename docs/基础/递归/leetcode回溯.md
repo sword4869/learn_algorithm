@@ -1,11 +1,7 @@
-- [22.排列组合](#22排列组合)
-- [37.解数独](#37解数独)
-- [51.N皇后](#51n皇后)
-
-----
-## 22.排列组合
+## 22. 括号生成
 
 ```java
+// 22. 括号生成
 class Solution {
     List<String> res = new ArrayList<>();
 
@@ -64,10 +60,7 @@ class Solution {
 
 ## 37.解数独
 
-![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211824045.png)
 
-行、列、整个board的9个9宫格：表示vis。
-- 每个内都是9个数的数组，数组中下标1元素为true表示已经有0了。
 ```java
 class Solution {
     // 表示已经被占用
@@ -125,55 +118,4 @@ class Solution {
 }
 ```
 
-## 51.N皇后
-
-![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202406211824315.png)
-
-```java
-class Solution {
-    LinkedList<Integer> stack = new LinkedList<>();
-    List<List<String>> result = new LinkedList<>();
-    int n;
-    boolean[] column;
-    boolean[] slash;
-    boolean[] backslash;
-    
-    char[] temp;
-
-    public List<List<String>> solveNQueens(int n) {
-        this.n = n;
-        column = new boolean[n];
-        slash = new boolean[2*n-1];
-        backslash = new boolean[2*n-1];
-        
-        temp = new char[n];
-        Arrays.fill(temp, '.');
-        dfs(0);
-        return result;
-    }
-
-    public void dfs(int i){
-        if(i == n){
-            List<String> t = new ArrayList<>();
-            for(int p: stack){
-                temp[p] = 'Q';
-                t.add(new String(temp));
-                temp[p] = '.';
-            }
-            result.add(t);
-            return;
-        }
-
-        for(int j = 0 ; j < n; j++){
-            if(column[j] || slash[i+j] || backslash[n-1+i-j]){
-                continue;
-            }
-            stack.push(j);
-            column[j] = slash[i+j] = backslash[n-1+i-j] = true;
-            dfs(i+1);
-            column[j] = slash[i+j] = backslash[n-1+i-j] = false;
-            stack.pop();
-        }
-    }
-}
-```
+ [51. N皇后.md](..\..\题\leetcode\51. N皇后.md) 

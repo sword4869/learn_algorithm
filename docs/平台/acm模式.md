@@ -1,5 +1,19 @@
 
 
+## 模板
+
+```java
+import java.util.*;		// 分号！
+
+public class Main{
+    public static void main(String[] args){
+        System.out.prinln(123);
+    }
+}
+```
+
+
+
 ## 格式
 
 - `Main`类
