@@ -10,3 +10,8 @@
 
 [560. 和为 K 的子数组](../../leetcode/560.%20和为K的子数组.md)
 
+
+
+
+
+todo：[前缀和及其扩展，附题单！](https://leetcode.cn/problems/range-sum-query-immutable/solutions/2693498/qian-zhui-he-ji-qi-kuo-zhan-fu-ti-dan-py-vaar/)
