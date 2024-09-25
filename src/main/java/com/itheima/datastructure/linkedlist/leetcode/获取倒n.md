@@ -1,4 +1,6 @@
-从哨兵开始还是从head开始都一样，因为拉开差距的是for，用了哨兵只是多走一次while.
+（1）fast最后是停在null处，所以倒1刚好就是fast和cur差1，cur停在最后一个。
+
+（2）从哨兵开始还是从head开始都一样，因为拉开差距的是for，用了哨兵只是多走一次while.
 
 ![](https://pic.leetcode-cn.com/8fc9ef022554d2a062db6a70d5199dbbb2a154ba1e64f0f697319bb0ef9ac680.png)
 
