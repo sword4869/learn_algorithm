@@ -45,7 +45,8 @@ for(List<Integer> l: list){		// 必须要指定类型, 因为取出来时泛型�
 ### 数组元素是集合
 
 ```java
-List<String>[] dp = new ArrayList[n];	// 不用指定 <>，注意和下面的区别
+List<String>[] dp = new List[n];	// 不用指定 <>，注意和下面的区别
+		// 可 List List; List ArrayList; ArrayList ArrayList; 不可 ArrayList List
 for(int i = 0; i < n; i++){
     dp[i] = new ArrayList<>();
     // dp[i] = new ArrayList<String>();  也行
