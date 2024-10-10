@@ -1,8 +1,8 @@
 ```java
-nums.length
+int[] : nums.length
     
-"dfs".length()
+String: "dfs".length()
     
-list.size()
+集合: list.size()
 ```
 

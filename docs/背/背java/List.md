@@ -117,6 +117,7 @@ stack2.addLast(2);
 stack2.addLast(3);
 stack2.addLast(4);
 stack2.pollLast();
+String top = stack2.peekLast();
 
 System.out.println(stack2);   					// [1, 2, 3]
 System.out.println(new ArrayList<>(stack2));  	// [1, 2, 3]
