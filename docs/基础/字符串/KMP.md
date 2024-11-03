@@ -146,9 +146,9 @@ KMP匹配：i是目标串待匹配字符，j是模式串的待匹配字符。
 ```java
 // 28. 找出字符串中第一个匹配项的下标
 class Solution {
-    public int strStr(String haystack, String needle) {
-        char[] origin = haystack.toCharArray();	// 源字符串
-        char[] pattern = needle.toCharArray();	// 目标子串
+    public int kmp(String s, String p) {
+        char[] origin = s.toCharArray();	// 源字符串
+        char[] pattern = p.toCharArray();	// 目标子串
         int[] next = new int[pattern.length];	// next大小同目标字串
         
         // 构建next数组
@@ -194,3 +194,7 @@ class Solution {
 ```
 
 ![image-20241023202241977](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202410232022043.png)
+
+## 题
+
+ [459. 重复的子字符串.md](..\..\题\leetcode\459. 重复的子字符串.md) 
