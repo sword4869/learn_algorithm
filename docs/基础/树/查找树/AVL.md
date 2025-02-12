@@ -1,3 +1,5 @@
+[toc]
+
 ## 平衡二叉搜索树AVL
 
 [7.5  AVL 树 * - Hello 算法 (hello-algo.com)](https://www.hello-algo.com/chapter_tree/avl_tree/#1_1)

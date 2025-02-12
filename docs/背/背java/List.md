@@ -1,3 +1,5 @@
+[toc]
+
 ## ArrayList
 
 ### 基本
