@@ -18,7 +18,7 @@ String s = list.get(0);
 
 
 
-### 二维数组
+### 二维集合
 
 ```java
 /* 两种方式的本质: 初始化和声名时的类型一致*/
@@ -44,18 +44,36 @@ for(List<Integer> l: list){		// 必须要指定类型, 因为取出来时泛型�
 
 ![image-20240717170417029](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images/202407171704489.png)
 
-### 数组元素是集合
+易错：添加集合元素时，忘记新建
 
 ```java
-List<String>[] dp = new List[n];	// 不用指定 <>，注意和下面的区别
-		// 可 List List; List ArrayList; ArrayList ArrayList; 不可 ArrayList List
+class Solution {
+    List<List<Integer>> res = new ArrayList<>();
+    List<Integer> path = new ArrayList<>();
+    
+    public void dfs(TreeNode root) {
+        if (root.left == root.right && sum == targetSum) {
+            // res.add(path);	错！！
+            res.add(new ArrayList<>(path));
+        }
+    }
+}
+```
+
+
+
+### 数组+集合
+
+```java
+// （1）数组元素是集合：不用指定 <>，注意和二维集合的区别
+List<String>[] dp = new List[n];	// 可 List List; List ArrayList; ArrayList ArrayList; 不可 ArrayList List
 for(int i = 0; i < n; i++){
     dp[i] = new ArrayList<>();
     // dp[i] = new ArrayList<String>();  也行
 }
 
-
-List<List<Float>> buckets = new ArrayList<>();		// 用指定 <>
+// （2）二维集合：用指定 <>
+List<List<Float>> buckets = new ArrayList<>();		
 for (int i = 0; i < k; i++) {
     buckets.add(new ArrayList<>());
 }
@@ -81,9 +99,9 @@ for (int i = 0; i < k; i++) {
 
 看似左队列，右栈。本质都是同一个链表。
 
-​	队列是尾增 add offer addLast 头删 pop poll remove pollFirst，
+​	队列是尾增 add addLast offer，头删 poll pollFirst pop  remove，
 
-​	栈是头增 push addFirst 头删
+​	栈是头增 push addFirst，头删 ……
 
 ![alt text](https://cdn.jsdelivr.net/gh/sword4869/pic1@main/images202406122313615.png)
 
