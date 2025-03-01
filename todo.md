@@ -108,3 +108,8 @@ public class Main {
 }
 ```
 
+2331. 计算布尔二叉树的值 https://leetcode.cn/problems/evaluate-boolean-binary-tree/
+508. 出现次数最多的子树元素和 https://leetcode.cn/problems/most-frequent-subtree-sum/
+1026. 节点与其祖先之间的最大差值 https://leetcode.cn/problems/maximum-difference-between-node-and-ancestor/
+1372. 二叉树中的最长交错路径 https://leetcode.cn/problems/longest-zigzag-path-in-a-binary-tree/
+1080. 根到叶路径上的不足节点 https://leetcode.cn/problems/insufficient-nodes-in-root-to-leaf-paths/
