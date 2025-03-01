@@ -16,6 +16,13 @@ list.set(0, "QQQ");
 String s = list.get(0);
 ```
 
+### 排序
+
+```java
+// List
+Collections.sort(list);
+```
+
 
 
 ### 二维集合
@@ -78,6 +85,14 @@ for (int i = 0; i < k; i++) {
     buckets.add(new ArrayList<>());
 }
 ```
+
+### 转化数组
+
+```java
+int[] arr = list.stream().mapToInt(i->i).toArray();
+```
+
+
 
 ## LinkedList
 
@@ -155,5 +170,19 @@ stack3.remove(stack3.size() - 1);
 
 System.out.println(stack3);   					// [1, 2, 3]
 System.out.println(new ArrayList<>(stack3));  	// [1, 2, 3]
+```
+
+## map
+
+```java
+map.containsKey(xx)
+```
+
+
+
+## set
+
+```java
+set.contains(xx)
 ```
 

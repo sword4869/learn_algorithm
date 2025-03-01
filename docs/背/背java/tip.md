@@ -47,3 +47,15 @@
     x++;
     System.out.println(x);
     ```
+
+6. size
+
+   ```java
+   int[] : nums.length
+       
+   String: "dfs".length()
+       
+   集合: list.size()
+   ```
+
+   
