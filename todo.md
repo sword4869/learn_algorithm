@@ -108,6 +108,5 @@ public class Main {
 }
 ```
 
-2331. 节点与其祖先之间的最大差值 https://leetcode.cn/problems/maximum-difference-between-node-and-ancestor/
-1372. 二叉树中的最长交错路径 https://leetcode.cn/problems/longest-zigzag-path-in-a-binary-tree/
-1080. 根到叶路径上的不足节点 https://leetcode.cn/problems/insufficient-nodes-in-root-to-leaf-paths/
+ [1080. 根到叶路径上的不足节点.md](docs\题\leetcode\1080. 根到叶路径上的不足节点.md) 
+
