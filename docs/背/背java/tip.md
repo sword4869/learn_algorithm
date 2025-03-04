@@ -48,14 +48,33 @@
     System.out.println(x);
     ```
 
-6. size
 
-   ```java
-   int[] : nums.length
-       
-   String: "dfs".length()
-       
-   集合: list.size()
-   ```
+## size
 
-   
+```java
+int[] : nums.length
+    
+String: "dfs".length()
+    
+集合: list.size()
+```
+
+## 判断是否浮点数相等
+存储的浮点数都是后几位精度不准的，所以基本都不能直接判断相等关系: `a==b`
+
+我们设定精度误差，这样就可以判断相等关系： `abs(a-b)<0.001`
+
+```cpp
+double d1 = 1.0/3;
+double d2 = 1.0/3 + 1 - 1;
+System.out.println(d1 == d2);       // false
+System.out.println(Math.abs(d2 - d1) < 1e-6);       // true
+
+double d3 = 1/3;
+System.out.println(d3);     // 0.0 先是整数相除得0，再转化为浮点数0.0
+```
+
+## 溢出
+
+`int * int` ，会溢出。`(long) int*int`
+
