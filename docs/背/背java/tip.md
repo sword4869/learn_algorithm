@@ -52,11 +52,11 @@
 ## size
 
 ```java
-int[] : nums.length
+int[] : nums.length		数组是特性
     
-String: "dfs".length()
+String: "dfs".length()	 String是函数，内部是调用字节数组的length
     
-集合: list.size()
+集合: list.size()			集合也是函数
 ```
 
 ## 判断是否浮点数相等
