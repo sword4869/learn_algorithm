@@ -44,7 +44,6 @@ e.g.
 
 - 进入dfs的可能合理可能不合理，dfs进入后才剪枝。
 - 处理的是自身节点，那么多个dfs只需要一次处理。
-
 - 终点的return前更新是 length+自身，因为循环中才进行统计自身节点，直接return时还没统计自身
 
 ```java
@@ -52,15 +51,15 @@ package com.example;
 
 import java.util.*;
 
-public class Main{
+public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[][] input_map =
-                {{1,0,0,0,0},{0,2,0,0,0},{0,0,1,0,0},{0,0,0,1,0},{0,0,0,0,1}}
-                ;
+                {{1, 0, 0, 0, 0}, {0, 2, 0, 0, 0}, {0, 0, 1, 0, 0}, {0, 0, 0, 1, 0}, {0, 0, 0, 0, 1}};
         int[] res = solution.CheckShortestPathOnlyOne(input_map);
         System.out.println(Arrays.toString(res));
     }
+
     static class Solution {
         boolean[][] vis;
         int m;
@@ -81,7 +80,7 @@ public class Main{
             vis = new boolean[m][n];
             this.input_map = input_map;
 
-            if(input_map[0][0] == 0){
+            if (input_map[0][0] == 0) {
                 return null;
             }
 
@@ -97,11 +96,7 @@ public class Main{
         public void dfs(int i, int j) {
             if (i < 0 || i >= m || j < 0 || j >= n || input_map[i][j] == 0 || vis[i][j]) {
                 return;
-            }
-            else if (i == m - 1 && j == n - 1 ) {
-                if(input_map[i][j] == 0){
-                    return;
-                }
+            } else if (i == m - 1 && j == n - 1) {
                 int len = length + input_map[i][j];
                 res.put(len, res.getOrDefault(len, 0) + 1);
                 min = Math.min(len, min);

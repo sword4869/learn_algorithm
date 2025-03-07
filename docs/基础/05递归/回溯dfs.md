@@ -93,3 +93,6 @@ class Solution {
 
  [37. 解数独.md](..\..\题\leetcode\37. 解数独.md) 
 
+## 写法
+
+ [797. 所有可能的路径.md](..\..\题\leetcode\797. 所有可能的路径.md)  [迷宫通路dfs.md](..\..\题\leetcode\迷宫通路dfs.md) 
