@@ -108,5 +108,10 @@ public class Main {
 }
 ```
 
- [1080. 根到叶路径上的不足节点.md](docs\题\leetcode\1080. 根到叶路径上的不足节点.md) 
 
+
+
+
+[内推鸭](https://www.neituiya.com/oj/10)
+
+[For Offer | ByteLighting](https://blog.braumace.cn/algorithm/for-offer/京东笔试-0824.html)
