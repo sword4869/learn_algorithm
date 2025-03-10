@@ -1,8 +1,5 @@
-- [LRU](#lru)
-- [LFU](#lfu)
+[toc]
 
-
----
 ## LRU
 
 hashmap存key和Node + 双链表
